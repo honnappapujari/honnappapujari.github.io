@@ -3,1062 +3,438 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Honnappa Pujari — Lead Product Designer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* ─── DESIGN TOKENS ──────────────────────────────────────────── */
-:root {
-  /* Surfaces */
-  --paper:   #FAFAF8;
-  --cream:   #F3F0EA;
-  --dark:    #111210;
-  --dark2:   #1E1F1C;
 
-  /* Text — all pass WCAG AA on their bg */
-  --t-primary:   #111210;   /* on light */
-  --t-secondary: #4A4A46;   /* on light */
-  --t-tertiary:  #767672;   /* on light — 4.6:1 on white */
-  --t-onDark:    #F0EEE8;   /* on dark  — high contrast */
-  --t-onDarkSub: #B8B5AC;   /* on dark  — 5.1:1 */
+<!-- ── SEO Meta Tags ── -->
+<title>Honnappa Pujari — Lead Product Designer | Bengaluru</title>
+<meta name="description" content="Lead Product Designer with 8+ years experience designing and building enterprise SaaS, IoT dashboards, and consumer apps. Sole designer on SISA Radar — used by Fortune 500 banks. Also ships live SaaS products independently.">
+<meta name="keywords" content="Product Designer, UX Designer, UI Designer, Bengaluru, India, SISA Radar, Figma, Angular, Enterprise UX, SaaS, GDPR, HIPAA">
+<meta name="author" content="Honnappa Pujari">
+<meta name="robots" content="index, follow">
+
+<!-- ── Open Graph (LinkedIn, WhatsApp, Slack previews) ── -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://honnappapujari.github.io">
+<meta property="og:title" content="Honnappa Pujari — Lead Product Designer">
+<meta property="og:description" content="8+ years designing and building enterprise SaaS, IoT dashboards, and consumer apps. Sole designer on SISA Radar. Ships live products independently.">
+<meta property="og:site_name" content="Honnappa Pujari Portfolio">
+
+<!-- ── Twitter Card ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Honnappa Pujari — Lead Product Designer">
+<meta name="twitter:description" content="8+ years designing and building enterprise SaaS, IoT dashboards, and consumer apps. Based in Bengaluru, India.">
+
+<!-- ── Canonical ── -->
+<link rel="canonical" href="https://honnappapujari.github.io">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ─── TOKENS ─────────────────────────────────────────── */
+:root {
+  --paper:  #FAFAF8;
+  --cream:  #F2EFE9;
+  --dark:   #111210;
+  --dark2:  #1D1E1B;
+  --rule:   #DEDAD2;
+
+  /* Text — all WCAG AA */
+  --t1: #111210;      /* primary   */
+  --t2: #45443F;      /* secondary */
+  --t3: #706E68;      /* tertiary — 4.8:1 on white */
+  --od: #EDEAE3;      /* on dark primary */
+  --os: #A8A59E;      /* on dark secondary — 5.2:1 */
 
   /* Accent */
-  --coral:   #D93D0E;
-  --coral-h: #B83309;
-  --coral-lt:#FFF0EB;
-
-  /* Rules */
-  --rule:    #DDD9D1;
-  --ruleDark:rgba(255,255,255,0.12);
+  --coral:  #D03C0B;
+  --coral2: #F26030;
+  --clt:    #FEF0EB;
 
   /* Status */
-  --green:   #1A6B3A;
-  --green-lt:#EAF5EE;
-  --blue:    #1545CC;
-  --blue-lt: #EEF2FF;
-  --grey-lt: #F0EFEC;
-  --grey:    #5C5C58;
+  --green:  #16643A;
+  --glt:    #E8F5EE;
+  --blue:   #1545CC;
+  --blt:    #EEF2FF;
+  --slat:   #EDECE9;
+  --slate:  #5A5955;
 
-  /* Typography */
   --fh: 'Fraunces', Georgia, serif;
   --fb: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  --max: 1140px;
+  --pad: 48px;
 }
 
-/* ─── RESET & BASE ───────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  background: var(--paper);
-  color: var(--t-primary);
-  font-family: var(--fb);
-  font-weight: 400;
-  line-height: 1.65;
-  overflow-x: hidden;
-  cursor: none;
+/* ─── RESET ──────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--t1);font-family:var(--fb);font-size:16px;line-height:1.65;overflow-x:hidden;cursor:none;}
+img{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--cream);}
+::-webkit-scrollbar-thumb{background:var(--coral);border-radius:2px;}
+@media(hover:none){body{cursor:auto;}.cdot,.cring{display:none;}}
+
+/* ─── CURSOR ─────────────────────────────────────────── */
+.cdot{position:fixed;z-index:9999;width:8px;height:8px;background:var(--coral);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .18s,height .18s;}
+.cring{position:fixed;z-index:9998;width:32px;height:32px;border:1.5px solid rgba(17,18,16,.28);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .3s cubic-bezier(.16,1,.3,1),height .3s,border-color .2s;}
+
+/* ─── PROGRESS ───────────────────────────────────────── */
+#prog{position:fixed;top:0;left:0;z-index:300;height:2px;width:0;background:var(--coral);}
+
+/* ─── NAV ────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--pad);
+  background:rgba(250,250,248,.94);
+  backdrop-filter:blur(20px) saturate(1.5);
+  border-bottom:1px solid var(--rule);
+}
+.nav-brand{display:flex;align-items:center;gap:11px;color:var(--t1);}
+.nav-mono{width:32px;height:32px;background:var(--dark);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:14px;font-weight:900;color:var(--od);transition:background .18s;flex-shrink:0;}
+.nav-brand:hover .nav-mono{background:var(--coral);}
+.nav-text{}
+.nav-name{font-size:13px;font-weight:700;color:var(--t1);line-height:1.2;}
+.nav-role{font-size:10px;font-weight:500;color:var(--t3);line-height:1.2;letter-spacing:.03em;}
+.nav-links{list-style:none;display:flex;gap:2px;align-items:center;}
+.nav-links a{font-size:12px;font-weight:500;color:var(--t2);padding:6px 13px;border-radius:6px;transition:all .16s;}
+.nav-links a:hover{color:var(--t1);background:var(--cream);}
+.n-hire{background:var(--dark)!important;color:var(--od)!important;margin-left:4px;}
+.n-hire:hover{background:var(--coral)!important;}
+
+/* ─── CONTAINER ──────────────────────────────────────── */
+.wrap{max-width:var(--max);margin:0 auto;}
+
+/* ─── HERO ───────────────────────────────────────────── */
+#hero{
+  min-height:100vh;
+  padding-top:60px;
+  display:flex;align-items:center;
+  border-bottom:1px solid var(--rule);
+  position:relative;overflow:hidden;
+}
+#hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(17,18,16,.055) 1px,transparent 1px);background-size:26px 26px;pointer-events:none;}
+
+.hero-inner{
+  max-width:var(--max);margin:0 auto;
+  padding:60px var(--pad) 80px;
+  width:100%;
+  display:grid;grid-template-columns:1fr 380px;
+  gap:64px;align-items:center;
+  position:relative;z-index:2;
 }
 
-/* ─── SCROLLBAR ──────────────────────────────────────────────── */
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--cream); }
-::-webkit-scrollbar-thumb { background: var(--coral); border-radius: 2px; }
+/* Left */
+.hero-l{}
+.h-eye{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;color:var(--coral);letter-spacing:.15em;text-transform:uppercase;margin-bottom:20px;opacity:0;animation:fup .6s ease forwards .1s;}
+.h-eye::after{content:'';width:32px;height:1px;background:var(--coral);}
+.h-name{font-family:var(--fh);font-weight:900;font-size:clamp(48px,5vw,76px);line-height:1.0;letter-spacing:-2px;color:var(--t1);margin-bottom:8px;opacity:0;animation:fup .6s ease forwards .22s;}
+.h-role{font-family:var(--fh);font-weight:700;font-style:italic;font-size:clamp(22px,2.5vw,36px);color:var(--coral);letter-spacing:-.5px;margin-bottom:24px;opacity:0;animation:fup .6s ease forwards .34s;}
+.h-desc{font-size:15px;font-weight:400;color:var(--t2);line-height:1.78;max-width:480px;margin-bottom:32px;opacity:0;animation:fup .6s ease forwards .46s;}
+.h-desc strong{color:var(--t1);font-weight:600;}
+.h-btns{display:flex;gap:10px;flex-wrap:wrap;opacity:0;animation:fup .6s ease forwards .58s;}
+.h-loc{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.04em;margin-top:24px;opacity:0;animation:fup .6s ease forwards .7s;}
+.loc-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:gpulse 2.5s ease-in-out infinite;}
 
-/* ─── CURSOR (hidden on mobile) ──────────────────────────────── */
-.cdot {
-  position: fixed; z-index: 9999;
-  width: 8px; height: 8px;
-  background: var(--coral);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%,-50%);
-  transition: width .2s, height .2s;
+/* Right — stats */
+.hero-r{
+  border-left:1px solid var(--rule);
+  padding-left:48px;
+  opacity:0;animation:fin .7s ease forwards .7s;
 }
-.cring {
-  position: fixed; z-index: 9998;
-  width: 32px; height: 32px;
-  border: 1.5px solid rgba(17,18,16,0.3);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%,-50%);
-  transition: width .35s cubic-bezier(.16,1,.3,1), height .35s, border-color .2s;
-}
-@media (hover: none) { .cdot, .cring { display: none; } body { cursor: auto; } }
+.h-stat{padding:20px 0;border-bottom:1px solid var(--rule);}
+.h-stat:last-child{border-bottom:none;}
+.h-stat-n{font-family:var(--fh);font-size:clamp(44px,4.5vw,72px);font-weight:900;color:var(--t1);line-height:.95;letter-spacing:-2.5px;}
+.h-stat-n sup{font-size:.38em;color:var(--coral);vertical-align:super;letter-spacing:0;}
+.h-stat-n small{font-size:.44em;letter-spacing:0;}
+.h-stat-l{font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.08em;text-transform:uppercase;margin-top:5px;}
 
-/* ─── PROGRESS BAR ───────────────────────────────────────────── */
-#prog {
-  position: fixed; top: 0; left: 0; z-index: 300;
-  height: 2px; width: 0;
-  background: var(--coral);
-  transition: width .08s linear;
-}
+/* ─── BUTTONS ────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;border-radius:7px;padding:11px 20px;transition:all .2s cubic-bezier(.16,1,.3,1);border:1.5px solid transparent;white-space:nowrap;}
+.btn-dark{background:var(--dark);color:var(--od);border-color:var(--dark);}
+.btn-dark:hover{background:var(--coral);border-color:var(--coral);transform:translateY(-1px);box-shadow:0 6px 20px rgba(208,60,11,.25);}
+.btn-outline{background:transparent;color:var(--t1);border-color:var(--rule);}
+.btn-outline:hover{border-color:var(--t1);background:var(--cream);transform:translateY(-1px);}
 
-/* ─── NAVIGATION ─────────────────────────────────────────────── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  height: 62px;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 40px;
-  background: rgba(250,250,248,0.93);
-  backdrop-filter: blur(18px) saturate(1.4);
-  border-bottom: 1px solid var(--rule);
-}
-.nav-brand {
-  display: flex; align-items: center; gap: 12px;
-  text-decoration: none; color: var(--t-primary);
-}
-.nav-mono {
-  width: 34px; height: 34px;
-  background: var(--dark);
-  border-radius: 6px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--fh);
-  font-size: 15px; font-weight: 900;
-  color: var(--t-onDark);
-  transition: background .2s;
-  flex-shrink: 0;
-}
-.nav-brand:hover .nav-mono { background: var(--coral); }
-.nav-name {
-  font-size: 14px; font-weight: 700;
-  color: var(--t-primary);
-  letter-spacing: -0.2px;
-}
-.nav-sub {
-  font-size: 11px; font-weight: 400;
-  color: var(--t-tertiary);
-  letter-spacing: 0.04em;
-  margin-top: 1px;
-}
-.nav-links {
-  list-style: none;
-  display: flex; gap: 2px; align-items: center;
-}
-.nav-links a {
-  font-size: 12px; font-weight: 500;
-  color: var(--t-secondary);
-  text-decoration: none;
-  padding: 7px 14px;
-  border-radius: 6px;
-  transition: all .18s;
-}
-.nav-links a:hover { color: var(--t-primary); background: var(--cream); }
-.n-hire {
-  background: var(--dark) !important;
-  color: var(--t-onDark) !important;
-  margin-left: 6px;
-}
-.n-hire:hover { background: var(--coral) !important; }
+/* ─── MARQUEE ────────────────────────────────────────── */
+#mq{background:var(--dark);padding:12px 0;overflow:hidden;border-bottom:1px solid var(--rule);}
+.mq-track{display:flex;animation:ticker 30s linear infinite;white-space:nowrap;}
+.mq-item{display:inline-flex;align-items:center;gap:20px;font-size:11px;font-weight:500;color:var(--os);letter-spacing:.1em;text-transform:uppercase;padding:0 20px;flex-shrink:0;}
+.mq-item span{color:var(--coral2);}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-/* ─── HERO ───────────────────────────────────────────────────── */
-#hero {
-  min-height: 100vh;
-  padding: 120px 40px 80px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  align-items: center;
-  position: relative;
-  border-bottom: 1px solid var(--rule);
-  overflow: hidden;
-}
-/* Dot grid */
-#hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image: radial-gradient(circle, rgba(17,18,16,.06) 1px, transparent 1px);
-  background-size: 28px 28px;
-  pointer-events: none;
-}
-.h-left { position: relative; z-index: 2; }
+/* ─── SECTION SHELL ──────────────────────────────────── */
+.section{border-bottom:1px solid var(--rule);}
+.section.alt{background:var(--cream);}
+.section.dark{background:var(--dark);}
+.section-inner{max-width:var(--max);margin:0 auto;padding:80px var(--pad);}
 
-.h-eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: 11px; font-weight: 600;
-  color: var(--coral);
-  letter-spacing: 0.15em; text-transform: uppercase;
-  margin-bottom: 24px;
-  opacity: 0; animation: fadeUp .6s ease forwards .1s;
-}
-.h-eyebrow::after { content: ''; width: 36px; height: 1px; background: var(--coral); }
+/* Section label + heading */
+.s-lbl{display:flex;align-items:center;gap:9px;font-size:10px;font-weight:600;color:var(--coral);letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px;}
+.s-lbl::before{content:'';width:14px;height:1px;background:var(--coral);flex-shrink:0;}
+.section.dark .s-lbl{color:var(--coral2);}
+.section.dark .s-lbl::before{background:var(--coral2);}
+.s-head{font-family:var(--fh);font-size:clamp(32px,3.5vw,48px);font-weight:900;letter-spacing:-1.5px;line-height:1.08;color:var(--t1);margin-bottom:44px;}
+.s-head em{font-style:italic;color:var(--coral);}
+.section.dark .s-head{color:var(--od);}
 
-.h-name {
-  font-family: var(--fh);
-  font-weight: 900;
-  font-size: clamp(50px, 6vw, 84px);
-  line-height: 1.0;
-  letter-spacing: -2px;
-  color: var(--t-primary);
-  margin-bottom: 10px;
-  opacity: 0; animation: fadeUp .6s ease forwards .25s;
-}
-.h-role {
-  font-family: var(--fh);
-  font-weight: 700; font-style: italic;
-  font-size: clamp(24px, 2.8vw, 40px);
-  color: var(--coral);
-  letter-spacing: -0.5px;
-  margin-bottom: 28px;
-  opacity: 0; animation: fadeUp .6s ease forwards .4s;
-}
-.h-desc {
-  font-size: 16px; font-weight: 400;
-  color: var(--t-secondary);
-  line-height: 1.75;
-  max-width: 450px;
-  margin-bottom: 36px;
-  opacity: 0; animation: fadeUp .6s ease forwards .55s;
-}
-.h-desc strong { color: var(--t-primary); font-weight: 600; }
+/* ─── ABOUT ──────────────────────────────────────────── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
 
-.h-btns {
-  display: flex; gap: 12px; flex-wrap: wrap;
-  opacity: 0; animation: fadeUp .6s ease forwards .7s;
-}
+.about-stmt{font-family:var(--fh);font-size:clamp(19px,1.8vw,25px);font-weight:700;line-height:1.45;color:var(--t1);letter-spacing:-.3px;margin-bottom:24px;}
+.about-stmt em{font-style:italic;color:var(--coral);}
+.about-body p{font-size:14px;font-weight:400;color:var(--t2);line-height:1.82;margin-bottom:14px;}
+.about-body p strong{color:var(--t1);font-weight:600;}
 
-/* Buttons */
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 13px; font-weight: 600;
-  border-radius: 8px;
-  padding: 12px 22px;
-  text-decoration: none;
-  transition: all .22s cubic-bezier(.16,1,.3,1);
-  border: 1.5px solid transparent;
-  cursor: pointer; white-space: nowrap;
-}
-.btn-dark { background: var(--dark); color: var(--t-onDark); border-color: var(--dark); }
-.btn-dark:hover { background: var(--coral); border-color: var(--coral); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(217,61,14,.28); }
-.btn-outline { background: transparent; color: var(--t-primary); border-color: var(--rule); }
-.btn-outline:hover { border-color: var(--t-primary); background: var(--cream); transform: translateY(-1px); }
+.tools-lbl{font-size:10px;font-weight:600;color:var(--t3);letter-spacing:.14em;text-transform:uppercase;margin:24px 0 10px;}
+.tools-list{display:flex;flex-wrap:wrap;gap:6px;}
+.ttag{font-size:11px;font-weight:500;color:var(--t2);background:var(--cream);border:1px solid var(--rule);padding:4px 11px;border-radius:4px;transition:all .16s;}
+.ttag:hover{color:var(--t1);border-color:var(--t1);}
 
-/* Hero right — stats */
-.h-right {
-  position: relative; z-index: 2;
-  padding-left: 48px;
-  border-left: 1px solid var(--rule);
-  opacity: 0; animation: fadeIn .8s ease forwards .8s;
-}
-.h-stat {
-  padding: 26px 0;
-  border-bottom: 1px solid var(--rule);
-}
-.h-stat:last-child { border-bottom: none; }
-.h-stat-n {
-  font-family: var(--fh);
-  font-size: clamp(52px, 5.5vw, 88px);
-  font-weight: 900;
-  color: var(--t-primary);
-  line-height: 0.95;
-  letter-spacing: -3px;
-}
-.h-stat-n sup { font-size: .38em; color: var(--coral); vertical-align: super; letter-spacing: 0; }
-.h-stat-n small { font-size: .45em; letter-spacing: 0; }
-.h-stat-l {
-  font-size: 11px; font-weight: 500;
-  color: var(--t-tertiary);
-  letter-spacing: 0.1em; text-transform: uppercase;
-  margin-top: 6px;
-}
+/* Right col */
+.comp-block{background:white;border:1px solid var(--rule);border-radius:10px;padding:24px;margin-bottom:20px;}
+.comp-lbl{font-size:10px;font-weight:600;color:var(--t3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+.comp-pill{background:var(--cream);border:1px solid var(--rule);border-radius:6px;padding:9px 12px;font-size:12px;font-weight:600;color:var(--t1);text-align:center;transition:all .16s;}
+.comp-pill:hover{border-color:var(--coral);color:var(--coral);}
 
-/* Location pill */
-.h-loc {
-  position: absolute; bottom: 0; left: 40px;
-  display: flex; align-items: center; gap: 8px;
-  font-size: 11px; font-weight: 500;
-  color: var(--t-tertiary);
-  letter-spacing: 0.05em;
-  padding: 8px 0;
-}
-.loc-dot {
-  width: 7px; height: 7px;
-  background: var(--green);
-  border-radius: 50%;
-  animation: pulse 2.5s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(26,107,58,.4); }
-  50% { opacity:.7; box-shadow: 0 0 0 5px rgba(26,107,58,0); }
-}
+.skills-lbl{font-size:10px;font-weight:600;color:var(--t3);letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;}
+.skill-groups{display:flex;flex-direction:column;gap:14px;}
+.sg-name{font-size:11px;font-weight:600;color:var(--t3);margin-bottom:7px;}
+.sg-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.sg-tag{font-size:12px;font-weight:500;color:var(--t1);background:white;border:1px solid var(--rule);padding:5px 11px;border-radius:6px;transition:all .16s;}
+.sg-tag:hover{border-color:var(--coral);color:var(--coral);background:var(--clt);}
 
-/* ─── MARQUEE ────────────────────────────────────────────────── */
-#mq {
-  background: var(--dark);
-  padding: 13px 0;
-  overflow: hidden;
-  border-bottom: 1px solid var(--rule);
-}
-.mq-track {
-  display: flex;
-  animation: ticker 28s linear infinite;
-  white-space: nowrap;
-}
-.mq-item {
-  display: inline-flex; align-items: center; gap: 24px;
-  font-size: 11px; font-weight: 500;
-  color: var(--t-onDarkSub);
-  letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 0 24px;
-  flex-shrink: 0;
-}
-.mq-item span { color: var(--coral); }
-@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* ─── SECTION WRAPPER ────────────────────────────────────────── */
-.sw { padding: 88px 40px; border-bottom: 1px solid var(--rule); }
-
-/* Section label */
-.s-label {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 10px; font-weight: 600;
-  color: var(--coral);
-  letter-spacing: 0.18em; text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.s-label::before { content: ''; width: 16px; height: 1px; background: var(--coral); flex-shrink: 0; }
-
-/* Section heading */
-.s-head {
-  font-family: var(--fh);
-  font-size: clamp(34px, 3.8vw, 52px);
-  font-weight: 900;
-  letter-spacing: -1.5px;
-  line-height: 1.08;
-  color: var(--t-primary);
-  margin-bottom: 48px;
-}
-.s-head em { font-style: italic; color: var(--coral); }
-
-/* ─── ABOUT ──────────────────────────────────────────────────── */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: start;
-}
-
-.about-statement {
-  font-family: var(--fh);
-  font-size: clamp(20px, 2vw, 27px);
-  font-weight: 700;
-  line-height: 1.45;
-  color: var(--t-primary);
-  letter-spacing: -0.3px;
-  margin-bottom: 28px;
-}
-.about-statement em { font-style: italic; color: var(--coral); }
-
-.about-body p {
-  font-size: 15px; font-weight: 400;
-  color: var(--t-secondary);
-  line-height: 1.82;
-  margin-bottom: 16px;
-}
-.about-body p strong { color: var(--t-primary); font-weight: 600; }
-
-.tools-wrap {
-  margin-top: 28px; padding-top: 28px;
-  border-top: 1px solid var(--rule);
-}
-.tools-label {
-  font-size: 10px; font-weight: 600;
-  color: var(--t-tertiary);
-  letter-spacing: 0.14em; text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.tools-list {
-  display: flex; flex-wrap: wrap; gap: 7px;
-}
-.tool-tag {
-  font-size: 11px; font-weight: 500;
-  color: var(--t-secondary);
-  background: var(--cream);
-  border: 1px solid var(--rule);
-  padding: 5px 12px;
-  border-radius: 4px;
-  transition: all .18s;
-}
-.tool-tag:hover { color: var(--t-primary); border-color: var(--t-primary); background: white; }
-
-/* Right column */
-.about-right {}
-
-/* Compliance block */
-.comp-block {
-  background: var(--cream);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: 28px;
-  margin-bottom: 24px;
-}
-.comp-block-label {
-  font-size: 10px; font-weight: 600;
-  color: var(--t-tertiary);
-  letter-spacing: 0.14em; text-transform: uppercase;
-  margin-bottom: 14px;
-}
-.comp-pills {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-.comp-pill {
-  background: white;
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  padding: 10px 14px;
-  font-size: 12px; font-weight: 600;
-  color: var(--t-primary);
-  text-align: center;
-  transition: all .18s;
-}
-.comp-pill:hover { border-color: var(--coral); color: var(--coral); }
-
-/* Skills — tag cloud, no bars */
-.skills-block { }
-.skills-block-label {
-  font-size: 10px; font-weight: 600;
-  color: var(--t-tertiary);
-  letter-spacing: 0.14em; text-transform: uppercase;
-  margin-bottom: 14px;
-}
-.skill-groups { display: flex; flex-direction: column; gap: 14px; }
-.skill-group {}
-.skill-group-name {
-  font-size: 11px; font-weight: 600;
-  color: var(--t-tertiary);
-  margin-bottom: 8px;
-  letter-spacing: 0.04em;
-}
-.skill-tags {
-  display: flex; flex-wrap: wrap; gap: 6px;
-}
-.skill-tag {
-  font-size: 12px; font-weight: 500;
-  color: var(--t-primary);
-  background: white;
-  border: 1px solid var(--rule);
-  padding: 5px 12px;
-  border-radius: 6px;
-  transition: all .18s;
-}
-.skill-tag:hover { border-color: var(--coral); color: var(--coral); background: var(--coral-lt); }
-
-/* ─── WORK ───────────────────────────────────────────────────── */
-.work-intro {
-  display: flex; justify-content: space-between;
-  align-items: flex-end; flex-wrap: wrap; gap: 20px;
-  margin-bottom: 48px;
-}
-.work-intro-sub {
-  font-size: 14px; font-weight: 400;
-  color: var(--t-secondary);
-  max-width: 340px; line-height: 1.75;
-}
+/* ─── WORK (shared card layout) ─────────────────────── */
+.work-hdr{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:40px;}
+.work-sub{font-size:14px;font-weight:400;color:var(--t2);max-width:320px;line-height:1.72;}
 
 /* Project row */
-.proj {
-  display: grid;
-  grid-template-columns: 68px 1fr 44px;
-  align-items: start;
-  gap: 32px;
-  padding: 36px 0;
-  border-top: 1px solid var(--rule);
-  cursor: pointer;
-  position: relative;
-  transition: padding-left .25s cubic-bezier(.16,1,.3,1);
+.proj{
+  display:grid;grid-template-columns:56px 1fr 42px;
+  align-items:start;gap:28px;
+  padding:32px 0;
+  border-top:1px solid var(--rule);
+  cursor:pointer;position:relative;
+  transition:padding-left .22s cubic-bezier(.16,1,.3,1);
 }
-.proj::before {
-  content: '';
-  position: absolute;
-  left: -40px; right: -40px; top: 0; bottom: 0;
-  background: var(--cream);
-  opacity: 0;
-  transition: opacity .2s;
-  z-index: 0;
-}
-.proj:hover::before { opacity: 1; }
-.proj > * { position: relative; z-index: 1; }
-.proj:hover { padding-left: 8px; }
-.proj-last { border-bottom: 1px solid var(--rule); }
+.proj::before{content:'';position:absolute;left:calc(-1*var(--pad));right:calc(-1*var(--pad));top:0;bottom:0;background:var(--cream);opacity:0;transition:opacity .18s;z-index:0;}
+.proj:hover::before{opacity:1;}
+.proj>*{position:relative;z-index:1;}
+.proj:hover{padding-left:6px;}
+.proj-last{border-bottom:1px solid var(--rule);}
+.section.alt .proj::before{background:white;}
+.section.alt .proj{border-top-color:var(--rule);}
 
-.proj-num {
-  font-family: var(--fh);
-  font-size: 44px; font-weight: 900;
-  color: var(--rule);
-  line-height: 1; letter-spacing: -2px;
-  padding-top: 2px;
-  transition: color .2s;
-}
-.proj:hover .proj-num { color: var(--coral); }
+.pn{font-family:var(--fh);font-size:38px;font-weight:900;color:var(--rule);line-height:1;letter-spacing:-1.5px;padding-top:3px;transition:color .18s;}
+.proj:hover .pn{color:var(--coral);}
 
-.proj-body {}
-.proj-top {
-  display: flex; align-items: center;
-  gap: 12px; flex-wrap: wrap;
-  margin-bottom: 10px;
-}
-.proj-title {
-  font-family: var(--fh);
-  font-size: clamp(22px, 2.4vw, 30px);
-  font-weight: 900;
-  color: var(--t-primary);
-  letter-spacing: -0.8px;
-  transition: color .2s;
-  line-height: 1.1;
-}
-.proj:hover .proj-title { color: var(--coral); }
+.pb-wrap{}
+.pt{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+.ptit{font-family:var(--fh);font-size:clamp(20px,2.2vw,27px);font-weight:900;color:var(--t1);letter-spacing:-.6px;line-height:1.1;transition:color .18s;}
+.proj:hover .ptit{color:var(--coral);}
 
-/* Badges */
-.badge {
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 4px;
-  border: 1px solid transparent;
-  white-space: nowrap;
-}
-.b-live  { background: var(--green-lt); color: var(--green); border-color: rgba(26,107,58,.2); }
-.b-ent   { background: var(--blue-lt);  color: var(--blue);  border-color: rgba(21,69,204,.2); }
-.b-ship  { background: var(--grey-lt);  color: var(--grey);  border-color: rgba(92,92,88,.2); }
+/* Badge */
+.badge{font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:4px;border:1px solid transparent;white-space:nowrap;}
+.b-live{background:var(--glt);color:var(--green);border-color:rgba(22,100,58,.2);}
+.b-ent{background:var(--blt);color:var(--blue);border-color:rgba(21,69,204,.2);}
+.b-ship{background:var(--slat);color:var(--slate);border-color:rgba(90,89,85,.2);}
 
-.proj-desc {
-  font-size: 14px; font-weight: 400;
-  color: var(--t-secondary);
-  line-height: 1.75;
-  margin-bottom: 14px;
-  max-width: 620px;
-}
-.proj-metrics {
-  display: flex; flex-wrap: wrap; gap: 20px;
-  margin-bottom: 14px;
-}
-.proj-metric {
-  font-size: 12px; font-weight: 500;
-  color: var(--t-secondary);
-}
-.proj-metric strong { color: var(--coral); font-weight: 700; }
-.proj-tags {
-  display: flex; flex-wrap: wrap; gap: 6px;
-}
-.proj-tag {
-  font-size: 11px; font-weight: 500;
-  color: var(--t-tertiary);
-  background: var(--cream);
-  border: 1px solid var(--rule);
-  padding: 3px 10px;
-  border-radius: 4px;
-}
+.pdesc{font-size:13px;font-weight:400;color:var(--t2);line-height:1.75;margin-bottom:12px;max-width:600px;}
+.pmets{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:11px;}
+.pmet{font-size:12px;font-weight:500;color:var(--t2);}
+.pmet strong{color:var(--coral);font-weight:700;}
+.ptags{display:flex;flex-wrap:wrap;gap:5px;}
+.ptag{font-size:10px;font-weight:500;color:var(--t3);background:var(--cream);border:1px solid var(--rule);padding:2px 9px;border-radius:3px;}
+.section.alt .ptag{background:white;}
 
-/* Arrow */
-.proj-arrow {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  border: 1.5px solid var(--rule);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--t-tertiary);
-  font-size: 18px;
-  flex-shrink: 0;
-  margin-top: 4px;
-  transition: all .25s cubic-bezier(.16,1,.3,1);
-}
-.proj:hover .proj-arrow {
-  background: var(--coral);
-  border-color: var(--coral);
-  color: white;
-  transform: rotate(-45deg);
-}
+.parr{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--rule);display:flex;align-items:center;justify-content:center;color:var(--t3);font-size:17px;flex-shrink:0;margin-top:3px;transition:all .22s cubic-bezier(.16,1,.3,1);}
+.proj:hover .parr{background:var(--coral);border-color:var(--coral);color:white;transform:rotate(-45deg);}
 
-/* ─── CASE STUDY ─────────────────────────────────────────────── */
-#cs { background: var(--cream); }
+/* Work section divider label */
+.work-divider{display:flex;align-items:center;gap:16px;margin:48px 0 0;padding-bottom:0;}
+.wd-label{font-size:11px;font-weight:700;color:var(--t3);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;}
+.wd-line{flex:1;height:1px;background:var(--rule);}
 
-.cs-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
-  align-items: center;
-}
-.cs-title {
-  font-family: var(--fh);
-  font-size: clamp(32px, 3.5vw, 48px);
-  font-weight: 900;
-  letter-spacing: -1.5px;
-  line-height: 1.05;
-  margin-bottom: 16px;
-}
-.cs-title em { font-style: italic; color: var(--coral); }
-.cs-desc {
-  font-size: 14px; font-weight: 400;
-  color: var(--t-secondary);
-  line-height: 1.8;
-  margin-bottom: 28px;
-}
-.cs-steps { margin-bottom: 32px; }
-.cs-step {
-  display: flex; align-items: flex-start; gap: 14px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--rule);
-}
-.cs-step:first-child { border-top: 1px solid var(--rule); }
-.cs-n {
-  font-size: 11px; font-weight: 600;
-  color: var(--coral);
-  padding-top: 2px;
-  flex-shrink: 0; width: 22px;
-}
-.cs-t {
-  font-size: 14px; font-weight: 400;
-  color: var(--t-secondary);
-  line-height: 1.65;
-}
-.cs-t strong { color: var(--t-primary); font-weight: 600; }
+/* ─── CASE STUDY ─────────────────────────────────────── */
+.cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;}
+.cs-title{font-family:var(--fh);font-size:clamp(28px,3vw,42px);font-weight:900;letter-spacing:-1.5px;line-height:1.05;margin-bottom:14px;}
+.cs-title em{font-style:italic;color:var(--coral);}
+.cs-desc{font-size:14px;font-weight:400;color:var(--t2);line-height:1.78;margin-bottom:24px;}
+.cs-steps{margin-bottom:28px;}
+.cs-step{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--rule);}
+.cs-step:first-child{border-top:1px solid var(--rule);}
+.cs-n{font-size:11px;font-weight:600;color:var(--coral);padding-top:1px;flex-shrink:0;width:20px;}
+.cs-t{font-size:13px;font-weight:400;color:var(--t2);line-height:1.65;}
+.cs-t strong{color:var(--t1);font-weight:600;}
 
 /* Mockup */
-.mockup {
-  background: white;
-  border: 1px solid var(--rule);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 20px 56px rgba(17,18,16,.1);
-}
-.m-bar {
-  background: var(--dark);
-  padding: 10px 14px;
-  display: flex; align-items: center; gap: 7px;
-}
-.m-dot { width: 9px; height: 9px; border-radius: 50%; }
-.m-url {
-  flex: 1; height: 20px; margin: 0 8px;
-  background: rgba(255,255,255,.15);
-  border-radius: 4px;
-  display: flex; align-items: center;
-  padding: 0 10px;
-}
-.m-url-text {
-  font-size: 10px; font-weight: 400;
-  color: var(--t-onDarkSub);
-  letter-spacing: 0.02em;
-}
-.m-body { padding: 18px; }
-.m-kpis {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 8px; margin-bottom: 14px;
-}
-.m-kpi {
-  background: var(--cream);
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 12px 10px;
-}
-.m-kpi-v {
-  font-family: var(--fh);
-  font-size: 20px; font-weight: 900;
-  color: var(--t-primary);
-  letter-spacing: -1px; line-height: 1;
-}
-.m-kpi-l {
-  font-size: 9px; font-weight: 500;
-  color: var(--t-tertiary);
-  text-transform: uppercase; letter-spacing: 0.08em;
-  margin-top: 3px;
-}
-.m-chart {
-  background: var(--cream);
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: 12px; margin-bottom: 12px;
-}
-.m-chart-l {
-  font-size: 9px; font-weight: 500;
-  color: var(--t-tertiary);
-  text-transform: uppercase; letter-spacing: 0.08em;
-  margin-bottom: 10px;
-}
-.m-bars {
-  display: flex; align-items: flex-end; gap: 5px;
-  height: 56px;
-}
-.m-b {
-  flex: 1; border-radius: 3px 3px 0 0;
-  background: var(--t-primary);
-  transition: background .2s;
-}
-.m-b:hover, .m-b.a { background: var(--coral); }
-.m-table { border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
-.m-th {
-  display: grid; grid-template-columns: 1.6fr repeat(4,1fr);
-  background: var(--dark); padding: 8px 12px; gap: 6px;
-}
-.m-th-c {
-  font-size: 8px; font-weight: 600;
-  color: var(--t-onDarkSub);
-  letter-spacing: 0.1em; text-transform: uppercase;
-}
-.m-tr {
-  display: grid; grid-template-columns: 1.6fr repeat(4,1fr);
-  padding: 7px 12px; gap: 6px;
-  border-top: 1px solid var(--rule);
-  align-items: center;
-}
-.m-tr.hi { background: rgba(217,61,14,.04); }
-.m-td { font-size: 10px; font-weight: 400; color: var(--t-tertiary); }
-.m-td.b { color: var(--t-primary); font-weight: 600; }
-.m-ck { color: var(--green); font-weight: 700; }
-.m-cx { color: #C94040; font-weight: 700; }
+.mockup{background:white;border:1px solid var(--rule);border-radius:12px;overflow:hidden;box-shadow:0 16px 48px rgba(17,18,16,.1);}
+.m-bar{background:var(--dark);padding:9px 13px;display:flex;align-items:center;gap:6px;}
+.m-dot{width:9px;height:9px;border-radius:50%;}
+.m-url{flex:1;height:18px;margin:0 7px;background:rgba(255,255,255,.13);border-radius:3px;display:flex;align-items:center;padding:0 8px;}
+.m-url-t{font-size:10px;font-weight:400;color:var(--os);}
+.m-body{padding:16px;}
+.m-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:12px;}
+.m-kpi{background:var(--cream);border:1px solid var(--rule);border-radius:7px;padding:10px 8px;}
+.m-kpi-v{font-family:var(--fh);font-size:18px;font-weight:900;color:var(--t1);letter-spacing:-.8px;line-height:1;}
+.m-kpi-l{font-size:9px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+.m-chart{background:var(--cream);border:1px solid var(--rule);border-radius:7px;padding:11px;margin-bottom:10px;}
+.m-chart-l{font-size:9px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:9px;}
+.m-bars{display:flex;align-items:flex-end;gap:4px;height:50px;}
+.m-b{flex:1;border-radius:2px 2px 0 0;background:var(--t1);transition:background .18s;}
+.m-b:hover,.m-b.a{background:var(--coral);}
+.m-tbl{border:1px solid var(--rule);border-radius:7px;overflow:hidden;}
+.m-th{display:grid;grid-template-columns:1.6fr repeat(4,1fr);background:var(--dark);padding:7px 10px;gap:4px;}
+.m-th-c{font-size:8px;font-weight:600;color:var(--os);letter-spacing:.08em;text-transform:uppercase;}
+.m-tr{display:grid;grid-template-columns:1.6fr repeat(4,1fr);padding:6px 10px;gap:4px;border-top:1px solid var(--rule);align-items:center;}
+.m-tr.hi{background:rgba(208,60,11,.04);}
+.m-td{font-size:9px;font-weight:400;color:var(--t3);}
+.m-td.b{color:var(--t1);font-weight:600;}
+.m-ck{color:var(--green);font-weight:700;}
+.m-cx{color:#C03030;font-weight:700;}
 
-/* ─── IMPACT (dark section) ──────────────────────────────────── */
-#impact { background: var(--dark); }
-#impact .s-label { color: #FF8055; }
-#impact .s-label::before { background: #FF8055; }
-#impact .s-head { color: var(--t-onDark); }
+/* ─── IMPACT (dark) ──────────────────────────────────── */
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);}
+.impact-card{background:var(--dark2);padding:32px 24px;position:relative;overflow:hidden;transition:background .2s;}
+.impact-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--coral);transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.16,1,.3,1);}
+.impact-card:hover{background:#22231F;}
+.impact-card:hover::after{transform:scaleX(1);}
+.imp-n{font-family:var(--fh);font-size:clamp(38px,3.5vw,54px);font-weight:900;color:var(--od);letter-spacing:-2px;line-height:1;margin-bottom:7px;}
+.imp-n sup{font-size:.38em;color:var(--coral2);vertical-align:super;letter-spacing:0;}
+.imp-n small{font-size:.45em;letter-spacing:0;}
+.imp-lbl{font-size:11px;font-weight:600;color:var(--os);letter-spacing:.09em;text-transform:uppercase;margin-bottom:10px;}
+.imp-desc{font-size:13px;font-weight:400;color:var(--os);line-height:1.65;}
 
-.impact-grid {
-  display: grid; grid-template-columns: repeat(4,1fr);
-  gap: 1px; background: var(--ruleDark);
-}
-.impact-card {
-  background: var(--dark2);
-  padding: 36px 28px;
-  position: relative; overflow: hidden;
-  transition: background .22s;
-}
-.impact-card::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 2px; background: var(--coral);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform .3s cubic-bezier(.16,1,.3,1);
-}
-.impact-card:hover { background: #272820; }
-.impact-card:hover::after { transform: scaleX(1); }
-.impact-num {
-  font-family: var(--fh);
-  font-size: clamp(40px,3.8vw,58px);
-  font-weight: 900;
-  color: var(--t-onDark);
-  letter-spacing: -2px; line-height: 1;
-  margin-bottom: 8px;
-}
-.impact-num sup { font-size: .4em; color: var(--coral); vertical-align: super; letter-spacing: 0; }
-.impact-num small { font-size: .5em; letter-spacing: 0; }
-.impact-label {
-  font-size: 11px; font-weight: 600;
-  color: var(--t-onDarkSub);
-  letter-spacing: 0.1em; text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.impact-desc {
-  font-size: 13px; font-weight: 400;
-  color: var(--t-onDarkSub);
-  line-height: 1.68;
+/* ─── EXPERIENCE ─────────────────────────────────────── */
+.exp-rows{display:flex;flex-direction:column;}
+.exp-row{display:grid;grid-template-columns:190px 1fr;gap:44px;padding:40px 0;border-top:1px solid var(--rule);}
+.exp-row:last-child{border-bottom:1px solid var(--rule);}
+.exp-period{font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.03em;margin-bottom:7px;}
+.exp-co{font-family:var(--fh);font-size:19px;font-weight:900;color:var(--t1);letter-spacing:-.4px;margin-bottom:4px;}
+.exp-dom{font-size:10px;font-weight:600;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;}
+.exp-role{font-family:var(--fh);font-size:20px;font-weight:900;color:var(--t1);letter-spacing:-.4px;margin-bottom:12px;}
+.exp-buls{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:16px;}
+.exp-buls li{font-size:13px;font-weight:400;color:var(--t2);line-height:1.72;padding-left:18px;position:relative;}
+.exp-buls li::before{content:'—';position:absolute;left:0;color:var(--coral);font-size:11px;font-weight:600;}
+.exp-buls li strong{color:var(--t1);font-weight:600;}
+.exp-chips{display:flex;flex-wrap:wrap;gap:5px;}
+.exp-chip{font-size:10px;font-weight:500;color:var(--t3);background:var(--cream);border:1px solid var(--rule);padding:3px 9px;border-radius:3px;}
+
+/* ─── PROCESS ────────────────────────────────────────── */
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden;}
+.proc-step{background:white;padding:28px 22px;transition:background .18s;}
+.proc-step:hover{background:var(--cream);}
+.proc-n{font-family:var(--fh);font-size:56px;font-weight:900;color:var(--rule);line-height:1;letter-spacing:-3px;margin-bottom:12px;transition:color .18s;}
+.proc-step:hover .proc-n{color:rgba(208,60,11,.15);}
+.proc-title{font-size:15px;font-weight:700;color:var(--t1);margin-bottom:6px;}
+.proc-body{font-size:13px;font-weight:400;color:var(--t2);line-height:1.7;}
+
+/* ─── PHILOSOPHY ─────────────────────────────────────── */
+.phil-grid{display:grid;grid-template-columns:300px 1fr;gap:64px;align-items:start;}
+.phil-big{font-family:var(--fh);font-size:clamp(28px,3vw,42px);font-weight:900;letter-spacing:-1.5px;line-height:1.1;color:var(--t1);margin-bottom:16px;}
+.phil-big em{font-style:italic;color:var(--coral);}
+.phil-sub{font-size:14px;font-weight:400;color:var(--t2);line-height:1.78;}
+.phil-list{display:flex;flex-direction:column;}
+.phil-item{display:grid;grid-template-columns:28px 1fr;gap:16px;align-items:start;padding:22px 0;border-bottom:1px solid var(--rule);}
+.phil-item:first-child{border-top:1px solid var(--rule);}
+.phil-n{font-size:11px;font-weight:600;color:var(--t3);padding-top:2px;}
+.phil-item h4{font-size:15px;font-weight:700;color:var(--t1);margin-bottom:6px;}
+.phil-item p{font-size:13px;font-weight:400;color:var(--t2);line-height:1.72;}
+
+/* ─── CONTACT ────────────────────────────────────────── */
+#contact{text-align:center;}
+.avail-badge{display:inline-flex;align-items:center;gap:7px;background:var(--glt);border:1px solid rgba(22,100,58,.22);border-radius:999px;padding:7px 16px;font-size:12px;font-weight:600;color:var(--green);letter-spacing:.03em;margin-bottom:28px;}
+.avail-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:gpulse 2.5s ease-in-out infinite;}
+.c-head{font-family:var(--fh);font-size:clamp(38px,5vw,66px);font-weight:900;letter-spacing:-2.5px;line-height:1.02;color:var(--t1);margin-bottom:16px;}
+.c-head em{font-style:italic;color:var(--coral);}
+.c-sub{font-size:15px;font-weight:400;color:var(--t2);line-height:1.75;max-width:520px;margin:0 auto 32px;}
+.c-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
+.c-meta{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
+.c-meta a,.c-meta span{font-size:13px;font-weight:500;color:var(--t3);transition:color .16s;}
+.c-meta a:hover{color:var(--coral);}
+.c-sep{width:3px;height:3px;background:var(--rule);border-radius:50%;}
+
+/* ─── FOOTER ─────────────────────────────────────────── */
+footer{background:var(--dark);padding:22px var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+footer p{font-size:12px;font-weight:400;color:var(--os);}
+footer p strong{color:var(--od);font-weight:600;}
+.f-links{display:flex;gap:18px;}
+.f-links a{font-size:12px;font-weight:500;color:var(--os);transition:color .16s;}
+.f-links a:hover{color:var(--coral2);}
+
+/* ─── REVEAL ─────────────────────────────────────────── */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.16,1,.3,1);}
+.rev.in{opacity:1;transform:none;}
+.d1{transition-delay:.06s;}.d2{transition-delay:.12s;}.d3{transition-delay:.18s;}.d4{transition-delay:.24s;}
+
+@keyframes fup{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+@keyframes fin{from{opacity:0;}to{opacity:1;}}
+@keyframes gpulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(22,100,58,.4);}50%{opacity:.7;box-shadow:0 0 0 5px rgba(22,100,58,0);}}
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+@media(max-width:1024px){
+  :root{--pad:32px;}
+  .hero-inner{grid-template-columns:1fr;gap:0;padding-bottom:60px;}
+  .hero-r{border-left:none;border-top:1px solid var(--rule);padding-left:0;padding-top:24px;display:grid;grid-template-columns:repeat(4,1fr);}
+  .h-stat{border-bottom:none;padding:18px 0;}
+  .h-stat:not(:last-child){border-right:1px solid var(--rule);padding-right:24px;margin-right:24px;}
+  .h-stat-n{font-size:clamp(32px,6vw,52px);}
+  .about-grid,.cs-grid,.phil-grid{grid-template-columns:1fr;gap:36px;}
+  .impact-grid{grid-template-columns:repeat(2,1fr);}
+  .proc-grid{grid-template-columns:repeat(2,1fr);}
+  .exp-row{grid-template-columns:1fr;gap:12px;}
+  .proj{grid-template-columns:48px 1fr 38px;gap:20px;padding:26px 0;}
+  .proj::before{left:calc(-1*var(--pad));right:calc(-1*var(--pad));}
+  .work-sub{text-align:left;max-width:100%;}
 }
 
-/* ─── EXPERIENCE ─────────────────────────────────────────────── */
-.exp-rows { display: flex; flex-direction: column; }
-.exp-row {
-  display: grid; grid-template-columns: 200px 1fr;
-  gap: 48px; padding: 44px 0;
-  border-top: 1px solid var(--rule);
-}
-.exp-row:last-child { border-bottom: 1px solid var(--rule); }
+@media(max-width:720px){
+  :root{--pad:20px;}
+  nav{padding:0 20px;}
+  .nav-role{display:none;}
 
-.exp-left {}
-.exp-period {
-  font-size: 11px; font-weight: 500;
-  color: var(--t-tertiary);
-  letter-spacing: 0.04em; margin-bottom: 8px;
-}
-.exp-co {
-  font-family: var(--fh);
-  font-size: 20px; font-weight: 900;
-  color: var(--t-primary);
-  letter-spacing: -0.5px; margin-bottom: 5px;
-}
-.exp-domain {
-  font-size: 11px; font-weight: 600;
-  color: var(--coral);
-  letter-spacing: 0.08em; text-transform: uppercase;
-}
+  #hero{min-height:auto;}
+  .hero-inner{padding:80px 20px 48px;gap:0;}
+  .h-name{font-size:clamp(42px,10vw,64px);letter-spacing:-1.5px;}
+  .h-role{font-size:clamp(20px,5vw,30px);}
+  .h-btns{flex-direction:column;}
+  .h-btns .btn{width:100%;justify-content:center;}
+  .hero-r{grid-template-columns:1fr 1fr;padding-top:20px;}
+  .h-stat:not(:last-child){border-right:none;padding-right:0;margin-right:0;}
+  .h-stat:nth-child(odd){border-right:1px solid var(--rule);padding-right:16px;}
+  .h-stat:nth-child(1),.h-stat:nth-child(2){border-bottom:1px solid var(--rule);}
+  .h-stat{padding:14px 0;}
+  .h-stat-n{font-size:clamp(28px,8vw,44px);}
 
-.exp-right {}
-.exp-role {
-  font-family: var(--fh);
-  font-size: 22px; font-weight: 900;
-  color: var(--t-primary);
-  letter-spacing: -0.5px; margin-bottom: 14px;
-}
-.exp-bullets {
-  list-style: none;
-  display: flex; flex-direction: column; gap: 10px;
-  margin-bottom: 18px;
-}
-.exp-bullets li {
-  font-size: 14px; font-weight: 400;
-  color: var(--t-secondary);
-  line-height: 1.72;
-  padding-left: 20px;
-  position: relative;
-}
-.exp-bullets li::before {
-  content: '—';
-  position: absolute; left: 0;
-  color: var(--coral);
-  font-size: 12px; font-weight: 600;
-}
-.exp-bullets li strong { color: var(--t-primary); font-weight: 600; }
-.exp-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.exp-chip {
-  font-size: 11px; font-weight: 500;
-  color: var(--t-tertiary);
-  background: var(--cream);
-  border: 1px solid var(--rule);
-  padding: 3px 10px; border-radius: 4px;
+  .section-inner{padding:52px 20px;}
+  .impact-grid{grid-template-columns:1fr 1fr;gap:1px;}
+  .proc-grid{grid-template-columns:1fr;}
+  .phil-grid{grid-template-columns:1fr;gap:28px;}
+
+  .proj{grid-template-columns:36px 1fr;gap:14px;padding:22px 0;}
+  .proj::before{left:-20px;right:-20px;}
+  .parr{display:none;}
+  .pn{font-size:26px;}
+
+  .c-btns{flex-direction:column;}
+  .c-btns .btn{width:100%;justify-content:center;}
+  .c-meta{flex-direction:column;gap:8px;}
+  .c-sep{display:none;}
+  footer{flex-direction:column;align-items:flex-start;gap:14px;padding:20px;}
+  .f-links{flex-wrap:wrap;gap:14px;}
+  .exp-chips{gap:4px;}
+  .work-hdr{margin-bottom:28px;}
 }
 
-/* ─── PROCESS ────────────────────────────────────────────────── */
-.process-grid {
-  display: grid; grid-template-columns: repeat(4,1fr);
-  gap: 1px;
-  background: var(--rule);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.process-step {
-  background: white;
-  padding: 32px 24px;
-  transition: background .2s;
-}
-.process-step:hover { background: var(--cream); }
-.proc-n {
-  font-family: var(--fh);
-  font-size: 64px; font-weight: 900;
-  color: var(--rule);
-  line-height: 1; letter-spacing: -3px;
-  margin-bottom: 14px;
-  transition: color .2s;
-}
-.process-step:hover .proc-n { color: rgba(217,61,14,.18); }
-.proc-title {
-  font-size: 17px; font-weight: 700;
-  color: var(--t-primary);
-  margin-bottom: 8px;
-}
-.proc-body {
-  font-size: 13px; font-weight: 400;
-  color: var(--t-secondary);
-  line-height: 1.7;
-}
-
-/* ─── PHILOSOPHY ─────────────────────────────────────────────── */
-#phil { background: var(--cream); }
-
-.phil-grid {
-  display: grid; grid-template-columns: 340px 1fr;
-  gap: 72px; align-items: start;
-}
-.phil-big {
-  font-family: var(--fh);
-  font-size: clamp(32px,3.5vw,46px);
-  font-weight: 900;
-  letter-spacing: -1.5px; line-height: 1.12;
-  color: var(--t-primary);
-  margin-bottom: 18px;
-}
-.phil-big em { font-style: italic; color: var(--coral); }
-.phil-sub {
-  font-size: 14px; font-weight: 400;
-  color: var(--t-secondary); line-height: 1.78;
-}
-.phil-list { display: flex; flex-direction: column; }
-.phil-item {
-  display: grid; grid-template-columns: 32px 1fr;
-  gap: 18px; align-items: start;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--rule);
-}
-.phil-item:first-child { border-top: 1px solid var(--rule); }
-.phil-n {
-  font-size: 11px; font-weight: 600;
-  color: var(--t-tertiary);
-  letter-spacing: 0.05em;
-  padding-top: 3px;
-}
-.phil-item h4 {
-  font-size: 17px; font-weight: 700;
-  color: var(--t-primary);
-  margin-bottom: 7px;
-  letter-spacing: -0.2px;
-}
-.phil-item p {
-  font-size: 14px; font-weight: 400;
-  color: var(--t-secondary); line-height: 1.72;
-}
-
-/* ─── CONTACT ────────────────────────────────────────────────── */
-#contact { text-align: center; }
-#contact .sw { padding-bottom: 100px; }
-
-.avail-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--green-lt);
-  border: 1px solid rgba(26,107,58,.25);
-  border-radius: 999px;
-  padding: 8px 18px;
-  font-size: 12px; font-weight: 600;
-  color: var(--green);
-  letter-spacing: 0.04em;
-  margin-bottom: 32px;
-}
-.avail-dot {
-  width: 7px; height: 7px;
-  background: var(--green);
-  border-radius: 50%;
-  animation: pulse 2.5s ease-in-out infinite;
-}
-.c-head {
-  font-family: var(--fh);
-  font-size: clamp(42px,5.5vw,72px);
-  font-weight: 900;
-  letter-spacing: -2.5px; line-height: 1.02;
-  color: var(--t-primary);
-  margin-bottom: 18px;
-}
-.c-head em { font-style: italic; color: var(--coral); }
-.c-sub {
-  font-size: 16px; font-weight: 400;
-  color: var(--t-secondary);
-  line-height: 1.75;
-  max-width: 540px; margin: 0 auto 36px;
-}
-.c-btns {
-  display: flex; gap: 12px;
-  justify-content: center; flex-wrap: wrap;
-  margin-bottom: 48px;
-}
-.c-meta {
-  display: flex; align-items: center;
-  justify-content: center; gap: 24px; flex-wrap: wrap;
-}
-.c-meta a, .c-meta span {
-  font-size: 13px; font-weight: 500;
-  color: var(--t-tertiary);
-  text-decoration: none;
-  transition: color .18s;
-}
-.c-meta a:hover { color: var(--coral); }
-.c-sep {
-  width: 3px; height: 3px;
-  background: var(--rule);
-  border-radius: 50%;
-}
-
-/* ─── FOOTER ─────────────────────────────────────────────────── */
-footer {
-  background: var(--dark);
-  padding: 24px 40px;
-  display: flex; align-items: center;
-  justify-content: space-between; flex-wrap: wrap; gap: 12px;
-  border-top: 1px solid rgba(255,255,255,.06);
-}
-footer p {
-  font-size: 12px; font-weight: 400;
-  color: var(--t-onDarkSub);
-}
-footer p strong { color: var(--t-onDark); font-weight: 600; }
-.f-links { display: flex; gap: 20px; }
-.f-links a {
-  font-size: 12px; font-weight: 500;
-  color: var(--t-onDarkSub);
-  text-decoration: none;
-  transition: color .18s;
-}
-.f-links a:hover { color: var(--coral); }
-
-/* ─── REVEAL ANIMATION ───────────────────────────────────────── */
-.rev {
-  opacity: 0; transform: translateY(24px);
-  transition: opacity .65s ease, transform .65s cubic-bezier(.16,1,.3,1);
-}
-.rev.in { opacity: 1; transform: none; }
-.d1 { transition-delay: .06s; }
-.d2 { transition-delay: .12s; }
-.d3 { transition-delay: .18s; }
-.d4 { transition-delay: .24s; }
-
-@keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:none; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-/* ─── RESPONSIVE ─────────────────────────────────────────────── */
-@media (max-width: 960px) {
-  nav { padding: 0 20px; }
-  .nav-sub { display: none; }
-  .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
-  .sw { padding: 64px 20px; }
-
-  #hero {
-    grid-template-columns: 1fr;
-    padding: 90px 20px 56px;
-    min-height: auto;
-  }
-  .h-right {
-    border-left: none;
-    border-top: 1px solid var(--rule);
-    padding-left: 0; padding-top: 28px;
-    display: grid; grid-template-columns: 1fr 1fr;
-  }
-  .h-stat {
-    border-bottom: 1px solid var(--rule);
-    border-right: none;
-    padding: 18px 16px 18px 0;
-  }
-  .h-stat:nth-child(odd) { border-right: 1px solid var(--rule); padding-right: 16px; }
-  .h-stat:nth-child(3), .h-stat:nth-child(4) { border-bottom: none; }
-  .h-stat-n { font-size: clamp(36px,8vw,60px); letter-spacing: -2px; }
-  .h-loc { left: 20px; }
-
-  .about-grid, .cs-grid, .phil-grid { grid-template-columns: 1fr; gap: 36px; }
-  .impact-grid { grid-template-columns: 1fr 1fr; }
-  .process-grid { grid-template-columns: 1fr 1fr; }
-  .exp-row { grid-template-columns: 1fr; gap: 14px; }
-
-  .proj { grid-template-columns: 52px 1fr 40px; gap: 20px; padding: 28px 0; }
-  .proj::before { left: -20px; right: -20px; }
-  .proj-num { font-size: 32px; }
-  .proj:hover { padding-left: 4px; }
-  footer { padding: 20px; }
-}
-
-@media (max-width: 600px) {
-  nav { padding: 0 16px; height: 56px; }
-  .nav-name { font-size: 13px; }
-  .sw { padding: 48px 16px; }
-
-  #hero { padding: 76px 16px 48px; }
-  .h-name { letter-spacing: -1.5px; }
-  .h-btns { flex-direction: column; }
-  .h-btns .btn { width: 100%; justify-content: center; }
-
-  .h-right { grid-template-columns: 1fr 1fr; }
-  .h-stat:nth-child(3), .h-stat:nth-child(4) { border-bottom: none; }
-
-  .impact-grid, .process-grid { grid-template-columns: 1fr; }
-  .impact-grid { gap: 1px; }
-
-  .proj { grid-template-columns: 40px 1fr; gap: 14px; }
-  .proj-arrow { display: none; }
-  .proj-num { font-size: 26px; }
-
-  .comp-pills { grid-template-columns: 1fr 1fr; }
-
-  .c-btns { flex-direction: column; }
-  .c-btns .btn { width: 100%; justify-content: center; }
-  .c-meta { flex-direction: column; gap: 10px; }
-  .c-sep { display: none; }
-
-  footer { flex-direction: column; align-items: flex-start; gap: 14px; }
-  .f-links { flex-wrap: wrap; gap: 14px; }
-
-  .phil-grid { grid-template-columns: 1fr; }
-  .work-intro { margin-bottom: 28px; }
-  .work-intro-sub { text-align: left; max-width: 100%; }
+@media(max-width:440px){
+  .hero-r{grid-template-columns:1fr 1fr;}
+  .impact-grid{grid-template-columns:1fr;}
+  .comp-grid{grid-template-columns:1fr 1fr;}
+  .h-name{font-size:clamp(38px,9vw,54px);}
 }
 </style>
 </head>
@@ -1068,13 +444,13 @@ footer p strong { color: var(--t-onDark); font-weight: 600; }
 <div class="cring" id="cring"></div>
 <div id="prog"></div>
 
-<!-- ═══ NAV ══════════════════════════════════════════════════════ -->
+<!-- ═══ NAV ══════════════════════════════════════════════ -->
 <nav>
   <a href="#hero" class="nav-brand">
     <div class="nav-mono">HP</div>
-    <div>
+    <div class="nav-text">
       <div class="nav-name">Honnappa Pujari</div>
-      <div class="nav-sub">Lead Product Designer · <span id="expNav"></span></div>
+      <div class="nav-role">Lead Product Designer · <span id="expNav"></span></div>
     </div>
   </a>
   <ul class="nav-links">
@@ -1085,320 +461,270 @@ footer p strong { color: var(--t-onDark); font-weight: 600; }
   </ul>
 </nav>
 
-<!-- ═══ HERO ══════════════════════════════════════════════════════ -->
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
 <section id="hero">
-  <div class="h-left">
-    <div class="h-eyebrow">Lead Product Designer</div>
-    <h1 class="h-name">Honnappa<br>Pujari</h1>
-    <div class="h-role">Design. Code. Ship.</div>
-    <p class="h-desc">
-      <strong><span id="expHero"></span></strong> of end-to-end product design —
-      Fortune 500 cybersecurity, IoT energy systems, healthcare, and consumer SaaS.
-      I design <em>and</em> build in production.
-    </p>
-    <div class="h-btns">
-      <a href="#work" class="btn btn-dark">
-        <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5h10M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        See my work
-      </a>
-      <a href="mailto:pujarihonnappa888@gmail.com" class="btn btn-outline">
-        pujarihonnappa888@gmail.com
-      </a>
+  <div class="hero-inner">
+    <div class="hero-l">
+      <div class="h-eye">Lead Product Designer</div>
+      <h1 class="h-name">Honnappa<br>Pujari</h1>
+      <div class="h-role">Design. Code. Ship.</div>
+      <p class="h-desc">
+        <strong><span id="expHero"></span></strong> of end-to-end product design —
+        Fortune 500 cybersecurity, IoT energy systems, healthcare, and consumer SaaS.
+        I design <em>and</em> build in production.
+      </p>
+      <div class="h-btns">
+        <a href="#work" class="btn btn-dark">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          See my work
+        </a>
+        <a href="mailto:pujarihonnappa888@gmail.com" class="btn btn-outline">pujarihonnappa888@gmail.com</a>
+      </div>
+      <div class="h-loc">
+        <div class="loc-dot"></div>
+        Bengaluru, India — Open to Product Designer · PM roles
+      </div>
     </div>
-  </div>
 
-  <div class="h-right">
-    <div class="h-stat">
-      <div class="h-stat-n"><span id="expYears">8</span><sup>+</sup></div>
-      <div class="h-stat-l">Years Experience</div>
+    <div class="hero-r">
+      <div class="h-stat">
+        <div class="h-stat-n"><span id="expYears">8</span><sup>+</sup></div>
+        <div class="h-stat-l">Years Experience</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-n">3</div>
+        <div class="h-stat-l">Industries</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-n">40<small>%</small></div>
+        <div class="h-stat-l">Compliance Time Saved</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-n">350<sup>+</sup></div>
+        <div class="h-stat-l">PII Types Covered</div>
+      </div>
     </div>
-    <div class="h-stat">
-      <div class="h-stat-n">3</div>
-      <div class="h-stat-l">Industries</div>
-    </div>
-    <div class="h-stat">
-      <div class="h-stat-n">40<small>%</small></div>
-      <div class="h-stat-l">Compliance Time Saved</div>
-    </div>
-    <div class="h-stat">
-      <div class="h-stat-n">350<sup>+</sup></div>
-      <div class="h-stat-l">PII Types Covered</div>
-    </div>
-  </div>
-
-  <div class="h-loc">
-    <div class="loc-dot"></div>
-    Bengaluru, India — Open to Product Designer · PM roles
   </div>
 </section>
 
-<!-- ═══ MARQUEE ════════════════════════════════════════════════════ -->
+<!-- ═══ MARQUEE ════════════════════════════════════════════ -->
 <div id="mq">
   <div class="mq-track">
-    <div class="mq-item">SISA Radar <span>·</span></div>
-    <div class="mq-item">GDPR <span>·</span></div>
-    <div class="mq-item">PCI DSS <span>·</span></div>
-    <div class="mq-item">CCPA <span>·</span></div>
-    <div class="mq-item">HIPAA <span>·</span></div>
-    <div class="mq-item">Angular <span>·</span></div>
-    <div class="mq-item">Ant Design <span>·</span></div>
-    <div class="mq-item">Figma <span>·</span></div>
-    <div class="mq-item">IoT Dashboards <span>·</span></div>
-    <div class="mq-item">Fortune 500 <span>·</span></div>
-    <div class="mq-item">Reportly <span>·</span></div>
-    <div class="mq-item">Next.js <span>·</span></div>
-    <div class="mq-item">React Native <span>·</span></div>
-    <div class="mq-item">Data Classification <span>·</span></div>
-    <div class="mq-item">SISA Radar <span>·</span></div>
-    <div class="mq-item">GDPR <span>·</span></div>
-    <div class="mq-item">PCI DSS <span>·</span></div>
-    <div class="mq-item">CCPA <span>·</span></div>
-    <div class="mq-item">HIPAA <span>·</span></div>
-    <div class="mq-item">Angular <span>·</span></div>
-    <div class="mq-item">Ant Design <span>·</span></div>
-    <div class="mq-item">Figma <span>·</span></div>
-    <div class="mq-item">IoT Dashboards <span>·</span></div>
-    <div class="mq-item">Fortune 500 <span>·</span></div>
-    <div class="mq-item">Reportly <span>·</span></div>
-    <div class="mq-item">Next.js <span>·</span></div>
-    <div class="mq-item">React Native <span>·</span></div>
-    <div class="mq-item">Data Classification <span>·</span></div>
+    <div class="mq-item">SISA Radar <span>·</span></div><div class="mq-item">GDPR <span>·</span></div><div class="mq-item">PCI DSS <span>·</span></div><div class="mq-item">CCPA <span>·</span></div><div class="mq-item">HIPAA <span>·</span></div><div class="mq-item">Angular <span>·</span></div><div class="mq-item">Ant Design <span>·</span></div><div class="mq-item">Figma <span>·</span></div><div class="mq-item">IoT Dashboards <span>·</span></div><div class="mq-item">Fortune 500 <span>·</span></div><div class="mq-item">Reportly <span>·</span></div><div class="mq-item">Today Price <span>·</span></div><div class="mq-item">AI Auditor <span>·</span></div><div class="mq-item">React Native <span>·</span></div><div class="mq-item">Data Classification <span>·</span></div>
+    <div class="mq-item">SISA Radar <span>·</span></div><div class="mq-item">GDPR <span>·</span></div><div class="mq-item">PCI DSS <span>·</span></div><div class="mq-item">CCPA <span>·</span></div><div class="mq-item">HIPAA <span>·</span></div><div class="mq-item">Angular <span>·</span></div><div class="mq-item">Ant Design <span>·</span></div><div class="mq-item">Figma <span>·</span></div><div class="mq-item">IoT Dashboards <span>·</span></div><div class="mq-item">Fortune 500 <span>·</span></div><div class="mq-item">Reportly <span>·</span></div><div class="mq-item">Today Price <span>·</span></div><div class="mq-item">AI Auditor <span>·</span></div><div class="mq-item">React Native <span>·</span></div><div class="mq-item">Data Classification <span>·</span></div>
   </div>
 </div>
 
-<!-- ═══ ABOUT ══════════════════════════════════════════════════════ -->
-<section id="about"><div class="sw">
-  <div class="s-label">About</div>
+<!-- ═══ ABOUT ══════════════════════════════════════════════ -->
+<section id="about" class="section"><div class="section-inner wrap">
+  <div class="s-lbl">About</div>
   <div class="about-grid">
-
     <div class="rev">
-      <div class="about-statement">
-        I don't hand off<br>to developers.<br>
-        I <em>am</em> the designer<br><em>and</em> the developer.
-      </div>
+      <div class="about-stmt">I don't hand off<br>to developers.<br>I <em>am</em> the designer<br><em>and</em> the developer.</div>
       <div class="about-body">
         <p>I'm <strong>Honnappa Pujari</strong>, a Lead Product Designer based in Bengaluru with <strong><span id="expAbout"></span></strong> of end-to-end product experience across cybersecurity, IoT energy management, and healthcare.</p>
-        <p>At <strong>SISA</strong>, I'm the sole designer on the Radar team — owning every pixel and flow from discovery call through production deployment. SISA Radar protects sensitive financial data at leading Indian banks under <strong>GDPR, CCPA, PCI DSS, and HIPAA</strong> frameworks.</p>
-        <p>Outside my day job, I build and ship consumer SaaS products solo — <strong>Reportly</strong> (live), Runway, VidQuiz AI, SpotBus — all designed and coded by me.</p>
+        <p>At <strong>SISA</strong>, I'm the sole designer on the Radar team — owning every pixel and flow from first discovery call through production deployment. SISA Radar protects sensitive financial data at leading Indian banks under <strong>GDPR, CCPA, PCI DSS, and HIPAA</strong> frameworks.</p>
+        <p>Outside my day job I independently design and build consumer products — live SaaS tools, price trackers, compliance platforms, and mobile apps all targeting the Indian market.</p>
       </div>
-      <div class="tools-wrap">
-        <div class="tools-label">Tools & Technologies</div>
-        <div class="tools-list">
-          <span class="tool-tag">Figma</span>
-          <span class="tool-tag">FigJam</span>
-          <span class="tool-tag">Adobe XD</span>
-          <span class="tool-tag">Miro</span>
-          <span class="tool-tag">Angular</span>
-          <span class="tool-tag">Ant Design</span>
-          <span class="tool-tag">Next.js</span>
-          <span class="tool-tag">React Native</span>
-          <span class="tool-tag">HTML / CSS / JS</span>
-          <span class="tool-tag">Bootstrap</span>
-          <span class="tool-tag">DevExpress</span>
-          <span class="tool-tag">Supabase</span>
-          <span class="tool-tag">Razorpay</span>
-          <span class="tool-tag">Photoshop</span>
-        </div>
+      <div class="tools-lbl">Tools & Technologies</div>
+      <div class="tools-list">
+        <span class="ttag">Figma</span><span class="ttag">FigJam</span><span class="ttag">Adobe XD</span><span class="ttag">Miro</span><span class="ttag">Angular</span><span class="ttag">Ant Design</span><span class="ttag">Next.js</span><span class="ttag">React Native</span><span class="ttag">HTML/CSS/JS</span><span class="ttag">Bootstrap</span><span class="ttag">DevExpress</span><span class="ttag">Supabase</span><span class="ttag">Razorpay</span><span class="ttag">Photoshop</span>
       </div>
     </div>
 
     <div class="rev d1">
       <div class="comp-block">
-        <div class="comp-block-label">Compliance Domain Expertise</div>
-        <div class="comp-pills">
-          <div class="comp-pill">GDPR</div>
-          <div class="comp-pill">CCPA</div>
-          <div class="comp-pill">PCI DSS</div>
-          <div class="comp-pill">HIPAA</div>
+        <div class="comp-lbl">Compliance Domain Expertise</div>
+        <div class="comp-grid">
+          <div class="comp-pill">GDPR</div><div class="comp-pill">CCPA</div>
+          <div class="comp-pill">PCI DSS</div><div class="comp-pill">HIPAA</div>
         </div>
       </div>
-
-      <div class="skills-block">
-        <div class="skills-block-label">Core Skills</div>
-        <div class="skill-groups">
-          <div class="skill-group">
-            <div class="skill-group-name">Product Design</div>
-            <div class="skill-tags">
-              <span class="skill-tag">User Research</span>
-              <span class="skill-tag">Wireframing</span>
-              <span class="skill-tag">High-Fidelity UI</span>
-              <span class="skill-tag">Prototyping</span>
-              <span class="skill-tag">Usability Testing</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-name">Design Systems</div>
-            <div class="skill-tags">
-              <span class="skill-tag">Component Libraries</span>
-              <span class="skill-tag">Design Tokens</span>
-              <span class="skill-tag">Multi-theming</span>
-              <span class="skill-tag">SCSS / Less</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-name">Development</div>
-            <div class="skill-tags">
-              <span class="skill-tag">Angular</span>
-              <span class="skill-tag">React</span>
-              <span class="skill-tag">HTML / CSS</span>
-              <span class="skill-tag">JavaScript</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-name">Specialisations</div>
-            <div class="skill-tags">
-              <span class="skill-tag">Data Visualisation</span>
-              <span class="skill-tag">Dashboard Design</span>
-              <span class="skill-tag">Enterprise UX</span>
-              <span class="skill-tag">AI Product Design</span>
-              <span class="skill-tag">Mobile UX</span>
-            </div>
-          </div>
-        </div>
+      <div class="skills-lbl">Core Skills</div>
+      <div class="skill-groups">
+        <div><div class="sg-name">Product Design</div><div class="sg-tags"><span class="sg-tag">User Research</span><span class="sg-tag">Wireframing</span><span class="sg-tag">High-Fidelity UI</span><span class="sg-tag">Prototyping</span><span class="sg-tag">Usability Testing</span></div></div>
+        <div><div class="sg-name">Design Systems</div><div class="sg-tags"><span class="sg-tag">Component Libraries</span><span class="sg-tag">Design Tokens</span><span class="sg-tag">Multi-theming</span><span class="sg-tag">SCSS / Less</span></div></div>
+        <div><div class="sg-name">Development</div><div class="sg-tags"><span class="sg-tag">Angular</span><span class="sg-tag">React</span><span class="sg-tag">Next.js</span><span class="sg-tag">HTML / CSS</span><span class="sg-tag">JavaScript</span></div></div>
+        <div><div class="sg-name">Specialisations</div><div class="sg-tags"><span class="sg-tag">Data Visualisation</span><span class="sg-tag">Dashboard Design</span><span class="sg-tag">Enterprise UX</span><span class="sg-tag">AI Product Design</span><span class="sg-tag">Mobile UX</span></div></div>
       </div>
     </div>
   </div>
 </div></section>
 
-<!-- ═══ WORK ═══════════════════════════════════════════════════════ -->
-<section id="work"><div class="sw">
-  <div class="work-intro">
+<!-- ═══ WORK — OFFICE PROJECTS ════════════════════════════ -->
+<section id="work" class="section"><div class="section-inner wrap">
+  <div class="work-hdr">
     <div>
-      <div class="s-label">Selected Work</div>
-      <h2 class="s-head">Products I've<br><em>Owned</em> End-to-End</h2>
+      <div class="s-lbl">Office Projects</div>
+      <h2 class="s-head">Enterprise Products<br>I've <em>Owned</em></h2>
     </div>
-    <p class="work-intro-sub">Enterprise platforms, consumer SaaS, and mobile apps — all designed and shipped independently.</p>
+    <p class="work-sub">Professional projects where I was the sole designer — full ownership from research to production code.</p>
   </div>
 
+  <!-- SISA Radar -->
   <div class="proj rev">
-    <div class="proj-num">01</div>
-    <div class="proj-body">
-      <div class="proj-top">
-        <span class="proj-title">SISA Radar</span>
-        <span class="badge b-ent">Enterprise</span>
-      </div>
-      <p class="proj-desc">Data Discovery, Classification & Protection platform trusted by leading Indian banks. Sole designer with full ownership from first discovery call through shipped Angular implementation — real-time classification dashboard, design system (Ant Design + Less Modules), and the ongoing Radar 2.0 redesign.</p>
-      <div class="proj-metrics">
-        <span class="proj-metric"><strong>40%</strong> compliance config time saved</span>
-        <span class="proj-metric"><strong>350+</strong> PII types supported</span>
-        <span class="proj-metric"><strong>15+</strong> product screens</span>
-      </div>
-      <div class="proj-tags">
-        <span class="proj-tag">Angular</span><span class="proj-tag">Ant Design</span><span class="proj-tag">Figma</span><span class="proj-tag">GDPR · CCPA · HIPAA</span><span class="proj-tag">Design System</span><span class="proj-tag">Banking</span>
-      </div>
+    <div class="pn">01</div>
+    <div class="pb-wrap">
+      <div class="pt"><span class="ptit">SISA Radar</span><span class="badge b-ent">Enterprise</span></div>
+      <p class="pdesc">Data Discovery, Classification & Protection platform trusted by leading Indian banks. Sole designer — owned every pixel and flow from first discovery call through shipped Angular implementation. Includes real-time classification dashboard, design system (Ant Design + Less Modules), and ongoing Radar 2.0 redesign.</p>
+      <div class="pmets"><span class="pmet"><strong>40%</strong> compliance config time saved</span><span class="pmet"><strong>350+</strong> PII types</span><span class="pmet"><strong>15+</strong> product screens</span></div>
+      <div class="ptags"><span class="ptag">Angular</span><span class="ptag">Ant Design</span><span class="ptag">Figma</span><span class="ptag">GDPR · CCPA · HIPAA</span><span class="ptag">Design System</span><span class="ptag">Banking</span></div>
     </div>
-    <div class="proj-arrow">→</div>
+    <div class="parr">→</div>
   </div>
 
+  <!-- Elmeasure -->
   <div class="proj rev">
-    <div class="proj-num">02</div>
-    <div class="proj-body">
-      <div class="proj-top">
-        <span class="proj-title">Elmeasure EMS</span>
-        <span class="badge b-ent">Enterprise</span>
-      </div>
-      <p class="proj-desc">IoT Energy Management System for industrial & commercial properties. Sole designer on EMS and EBS product lines — real-time energy monitoring dashboards for live IoT data streams. Shipped production code in Angular alongside the design work.</p>
-      <div class="proj-metrics">
-        <span class="proj-metric"><strong>2</strong> product lines (EMS + EBS)</span>
-        <span class="proj-metric"><strong>Live</strong> IoT data streams</span>
-        <span class="proj-metric"><strong>Full</strong> design system delivered</span>
-      </div>
-      <div class="proj-tags">
-        <span class="proj-tag">Angular</span><span class="proj-tag">Bootstrap</span><span class="proj-tag">Figma</span><span class="proj-tag">Real-time Data</span><span class="proj-tag">Dashboard Design</span><span class="proj-tag">IoT</span>
-      </div>
+    <div class="pn">02</div>
+    <div class="pb-wrap">
+      <div class="pt"><span class="ptit">Elmeasure EMS</span><span class="badge b-ent">Enterprise</span></div>
+      <p class="pdesc">IoT Energy Management System for industrial & commercial properties. Sole designer on EMS and EBS product lines — real-time energy monitoring dashboards for live IoT data streams. Shipped production Angular code alongside design work.</p>
+      <div class="pmets"><span class="pmet"><strong>2</strong> product lines (EMS + EBS)</span><span class="pmet"><strong>Live</strong> IoT data streams</span><span class="pmet"><strong>Full</strong> design system</span></div>
+      <div class="ptags"><span class="ptag">Angular</span><span class="ptag">Bootstrap</span><span class="ptag">Figma</span><span class="ptag">Real-time Data</span><span class="ptag">Dashboard Design</span><span class="ptag">IoT</span></div>
     </div>
-    <div class="proj-arrow">→</div>
+    <div class="parr">→</div>
   </div>
 
-  <div class="proj rev" onclick="window.open('https://reportly.today-price.com','_blank')">
-    <div class="proj-num">03</div>
-    <div class="proj-body">
-      <div class="proj-top">
-        <span class="proj-title">Reportly</span>
-        <span class="badge b-live">Live ↗</span>
-      </div>
-      <p class="proj-desc">AI-powered SaaS converting Excel/CSV into professional PDF reports with branded charts and AI chat-with-data. Built entirely solo — zero-friction UX (no signup to start), 6+ chart types, Razorpay India-first payments targeting Indian CAs and agencies.</p>
-      <div class="proj-metrics">
-        <span class="proj-metric"><strong>&lt;60s</strong> time to first report</span>
-        <span class="proj-metric"><strong>6+</strong> chart types</span>
-        <span class="proj-metric"><strong>0</strong> signup friction</span>
-      </div>
-      <div class="proj-tags">
-        <span class="proj-tag">Next.js</span><span class="proj-tag">ECharts</span><span class="proj-tag">Supabase</span><span class="proj-tag">Razorpay</span><span class="proj-tag">Claude AI</span><span class="proj-tag">SaaS</span>
-      </div>
-    </div>
-    <div class="proj-arrow">→</div>
-  </div>
-
-  <div class="proj rev">
-    <div class="proj-num">04</div>
-    <div class="proj-body">
-      <div class="proj-top">
-        <span class="proj-title">Healthcare Digital</span>
-        <span class="badge b-ship">Shipped</span>
-      </div>
-      <p class="proj-desc">Designed and built 20+ custom websites for healthcare professionals at Your Practice Online — brand development, patient education UX, appointment booking flows, and SEO. Full delivery from wireframe to production using WordPress, HTML/CSS, jQuery, and Bootstrap.</p>
-      <div class="proj-metrics">
-        <span class="proj-metric"><strong>20+</strong> websites shipped</span>
-        <span class="proj-metric"><strong>↑</strong> organic traffic via SEO</span>
-      </div>
-      <div class="proj-tags">
-        <span class="proj-tag">WordPress</span><span class="proj-tag">HTML · CSS · JS</span><span class="proj-tag">Bootstrap</span><span class="proj-tag">Healthcare UX</span><span class="proj-tag">SEO</span>
-      </div>
-    </div>
-    <div class="proj-arrow">→</div>
-  </div>
-
+  <!-- Healthcare -->
   <div class="proj proj-last rev">
-    <div class="proj-num">05</div>
-    <div class="proj-body">
-      <div class="proj-top">
-        <span class="proj-title">Side Projects</span>
-        <span class="badge b-ship">Shipped</span>
-      </div>
-      <p class="proj-desc">5+ consumer products built and shipped solo — Runway (React Native flight tracker), VidQuiz AI (Gemini quiz generator), StackZen AI (SMB landing page), SpotBus (real-time GPS tracking), PrivacyGuard (Chrome extension). All India-market targeted.</p>
-      <div class="proj-tags">
-        <span class="proj-tag">React Native</span><span class="proj-tag">Expo</span><span class="proj-tag">Next.js</span><span class="proj-tag">Firebase</span><span class="proj-tag">Gemini AI</span><span class="proj-tag">Chrome Extension</span>
-      </div>
+    <div class="pn">03</div>
+    <div class="pb-wrap">
+      <div class="pt"><span class="ptit">Healthcare Digital</span><span class="badge b-ship">Shipped</span></div>
+      <p class="pdesc">Designed and built 20+ custom websites for healthcare professionals at Your Practice Online — brand development, patient education UX, appointment booking flows, and SEO. Full delivery from wireframe to production.</p>
+      <div class="pmets"><span class="pmet"><strong>20+</strong> websites shipped</span><span class="pmet"><strong>↑</strong> organic traffic via SEO</span></div>
+      <div class="ptags"><span class="ptag">WordPress</span><span class="ptag">HTML · CSS · JS</span><span class="ptag">Bootstrap</span><span class="ptag">Healthcare UX</span><span class="ptag">SEO</span></div>
     </div>
-    <div class="proj-arrow">→</div>
+    <div class="parr">→</div>
   </div>
+
 </div></section>
 
-<!-- ═══ CASE STUDY ═════════════════════════════════════════════════ -->
-<section id="cs"><div class="sw">
-  <div class="s-label">Deep Dive</div>
+<!-- ═══ WORK — PERSONAL PROJECTS ══════════════════════════ -->
+<section id="personal" class="section alt"><div class="section-inner wrap">
+  <div class="work-hdr">
+    <div>
+      <div class="s-lbl">Personal Projects</div>
+      <h2 class="s-head">Products I've Built<br><em>Independently</em></h2>
+    </div>
+    <p class="work-sub">All designed, developed, and shipped solo — targeting the Indian market.</p>
+  </div>
+
+  <!-- Reportly — FEATURED -->
+  <div class="proj rev" onclick="window.open('https://reportly.today-price.com','_blank')">
+    <div class="pn">01</div>
+    <div class="pb-wrap">
+      <div class="pt"><span class="ptit">Reportly</span><span class="badge b-live">Live ↗</span></div>
+      <p class="pdesc"><strong>Featured project.</strong> AI-powered SaaS converting Excel/CSV into professional PDF reports with branded charts and AI chat-with-data. Zero-friction UX (no signup to start), 6+ chart types, Razorpay India-first payments. Targets Indian CAs, agencies, and SMBs — a unique market position no competitor occupies.</p>
+      <div class="pmets"><span class="pmet"><strong>&lt;60s</strong> time to first report</span><span class="pmet"><strong>6+</strong> chart types</span><span class="pmet"><strong>0</strong> signup needed</span></div>
+      <div class="ptags"><span class="ptag">Next.js</span><span class="ptag">ECharts</span><span class="ptag">Supabase</span><span class="ptag">Razorpay</span><span class="ptag">Claude AI</span><span class="ptag">PDF Export</span><span class="ptag">SaaS</span></div>
+    </div>
+    <div class="parr">→</div>
+  </div>
+
+  <!-- Today Price -->
+  <div class="proj rev" onclick="window.open('https://today-price.com','_blank')">
+    <div class="pn">02</div>
+    <div class="pb-wrap">
+      <div class="pt"><span class="ptit">Today Price</span><span class="badge b-live">Live ↗</span></div>
+      <p class="pdesc">Live gold, silver, platinum, and precious metal price tracker in 10 currencies including INR, AED, and USD. Updates every 60 seconds from LBMA spot rates. Clean, fast, mobile-first design — fully designed and developed solo.</p>
+      <div class="pmets"><span class="pmet"><strong>60s</strong> price refresh</span><span class="pmet"><strong>10</strong> currencies</span><span class="pmet"><strong>5</strong> metals tracked</span></div>
+      <div class="ptags"><span class="ptag">Next.js</span><span class="ptag">LBMA API</span><span class="ptag">SEO</span><span class="ptag">Real-time Data</span><span class="ptag">Mobile-first</span></div>
+    </div>
+    <div class="parr">→</div>
+  </div>
+
+  <!-- CheapAndBest -->
+  <div class="proj rev" onclick="window.open('https://cheapandbest.netlify.app','_blank')">
+    <div class="pn">03</div>
+    <div class="pb-wrap">
+      <div class="pt"><span class="ptit">CheapAndBest</span><span class="badge b-live">Live ↗</span></div>
+      <p class="pdesc">AI-powered price comparison tool across Amazon & Flipkart for electronics — iPhones, laptops, and gadgets. Helps Indian shoppers find the best deals in real time. Fully designed and developed solo.</p>
+      <div class="pmets"><span class="pmet"><strong>2</strong> platforms compared</span><span class="pmet"><strong>Real-time</strong> price data</span></div>
+      <div class="ptags"><span class="ptag">React</span><span class="ptag">AI Price Engine</span><span class="ptag">Amazon API</span><span class="ptag">Flipkart</span><span class="ptag">India Market</span></div>
+    </div>
+    <div class="parr">→</div>
+  </div>
+
+  <!-- AI Auditor -->
+  <div class="proj rev" onclick="window.open('https://aiauditor.netlify.app','_blank')">
+    <div class="pn">04</div>
+    <div class="pb-wrap">
+      <div class="pt"><span class="ptit">AI Audit Assistant</span><span class="badge b-live">Live ↗</span></div>
+      <p class="pdesc">AI-powered compliance auditing platform supporting 18+ frameworks including SOC2, ISO 27001, HIPAA, and GDPR. Generates professional audit reports with automated remediation guidance — completing audits 10x faster than traditional methods.</p>
+      <div class="pmets"><span class="pmet"><strong>18+</strong> compliance frameworks</span><span class="pmet"><strong>10x</strong> faster audits</span></div>
+      <div class="ptags"><span class="ptag">AI / LLM</span><span class="ptag">SOC2</span><span class="ptag">ISO 27001</span><span class="ptag">HIPAA</span><span class="ptag">GDPR</span><span class="ptag">Compliance</span></div>
+    </div>
+    <div class="parr">→</div>
+  </div>
+
+  <!-- Runway -->
+  <div class="proj rev">
+    <div class="pn">05</div>
+    <div class="pb-wrap">
+      <div class="pt"><span class="ptit">Runway — Flight Tracker</span><span class="badge b-ship">Shipped</span></div>
+      <p class="pdesc">Cross-platform React Native flight tracking app (Flighty competitor) with real-time notifications, 60-second flight polling, Supabase Auth, and a Node.js/Fastify/Redis backend. Designed for the Indian market at ₹499/month.</p>
+      <div class="pmets"><span class="pmet"><strong>60s</strong> flight polling</span><span class="pmet"><strong>₹499</strong>/month</span></div>
+      <div class="ptags"><span class="ptag">React Native</span><span class="ptag">Expo</span><span class="ptag">Node.js</span><span class="ptag">Supabase</span><span class="ptag">Redis</span><span class="ptag">Mobile UX</span></div>
+    </div>
+    <div class="parr">→</div>
+  </div>
+
+  <!-- VidQuiz -->
+  <div class="proj rev">
+    <div class="pn">06</div>
+    <div class="pb-wrap">
+      <div class="pt"><span class="ptit">VidQuiz AI</span><span class="badge b-ship">Shipped</span></div>
+      <p class="pdesc">Next.js app that generates MCQ quizzes from YouTube videos using Gemini AI. Full dark glassmorphism UI, Supabase persistence, and complete UI overhaul from initial MVP to polished product.</p>
+      <div class="ptags"><span class="ptag">Next.js</span><span class="ptag">Gemini AI</span><span class="ptag">Supabase</span><span class="ptag">EdTech</span><span class="ptag">Glassmorphism</span></div>
+    </div>
+    <div class="parr">→</div>
+  </div>
+
+  <!-- SpotBus -->
+  <div class="proj rev">
+    <div class="pn">07</div>
+    <div class="pb-wrap">
+      <div class="pt"><span class="ptit">SpotBus</span><span class="badge b-ship">Shipped</span></div>
+      <p class="pdesc">Real-time vehicle tracking app for school buses and office cabs. React Native + React admin portal + Firebase. Admin generates a trip code shared via WhatsApp; driver broadcasts GPS; parents and staff track in real time.</p>
+      <div class="ptags"><span class="ptag">React Native</span><span class="ptag">Firebase</span><span class="ptag">Real-time GPS</span><span class="ptag">Admin Portal</span><span class="ptag">India Market</span></div>
+    </div>
+    <div class="parr">→</div>
+  </div>
+
+  <!-- PrivacyGuard -->
+  <div class="proj proj-last rev">
+    <div class="pn">08</div>
+    <div class="pb-wrap">
+      <div class="pt"><span class="ptit">PrivacyGuard</span><span class="badge b-ship">Shipped</span></div>
+      <p class="pdesc">Chrome extension detecting 45+ sensitive data types — Indian PII, payment cards, API keys, and more — with token-based masking. Protects users from accidentally sharing sensitive data while browsing.</p>
+      <div class="ptags"><span class="ptag">Chrome Extension</span><span class="ptag">JavaScript</span><span class="ptag">PII Detection</span><span class="ptag">Privacy</span><span class="ptag">Security</span></div>
+    </div>
+    <div class="parr">→</div>
+  </div>
+
+</div></section>
+
+<!-- ═══ CASE STUDY ═════════════════════════════════════════ -->
+<section id="cs" class="section"><div class="section-inner wrap">
+  <div class="s-lbl">Deep Dive</div>
   <div class="cs-grid">
     <div class="rev">
       <h2 class="cs-title">Reportly —<br><em>Excel to PDF</em><br>in 60 seconds</h2>
       <p class="cs-desc">Indian CAs and agencies spent 3–5 hours weekly formatting Excel data into client reports. I designed and shipped a zero-friction tool that eliminates that entirely.</p>
       <div class="cs-steps">
-        <div class="cs-step">
-          <span class="cs-n">01</span>
-          <p class="cs-t"><strong>Problem:</strong> No free, India-first, web-based tool converted spreadsheets into professional PDFs with branded charts.</p>
-        </div>
-        <div class="cs-step">
-          <span class="cs-n">02</span>
-          <p class="cs-t"><strong>Decision:</strong> Zero signup to start — users see value before committing, critical for cold Indian SMB traffic.</p>
-        </div>
-        <div class="cs-step">
-          <span class="cs-n">03</span>
-          <p class="cs-t"><strong>AI shift:</strong> Embedded Claude AI as "chat with your data" — shifted product from report generator to analyst assistant.</p>
-        </div>
-        <div class="cs-step">
-          <span class="cs-n">04</span>
-          <p class="cs-t"><strong>India-first:</strong> Razorpay over Stripe — UPI and NetBanking support for primary Indian payment methods.</p>
-        </div>
+        <div class="cs-step"><span class="cs-n">01</span><p class="cs-t"><strong>Problem:</strong> No free, India-first web tool converted spreadsheets into branded PDFs with charts.</p></div>
+        <div class="cs-step"><span class="cs-n">02</span><p class="cs-t"><strong>Decision:</strong> Zero signup to start — users see value before committing. Critical for cold Indian SMB traffic.</p></div>
+        <div class="cs-step"><span class="cs-n">03</span><p class="cs-t"><strong>AI shift:</strong> Embedded Claude AI as "chat with your data" — shifted from generator to analyst assistant.</p></div>
+        <div class="cs-step"><span class="cs-n">04</span><p class="cs-t"><strong>India-first:</strong> Razorpay over Stripe — UPI and NetBanking for primary Indian payment methods.</p></div>
       </div>
       <a href="https://reportly.today-price.com" target="_blank" class="btn btn-dark">View live product →</a>
     </div>
-
     <div class="mockup rev d1">
       <div class="m-bar">
         <div class="m-dot" style="background:#FF5F57;"></div>
         <div class="m-dot" style="background:#FEBC2E;"></div>
         <div class="m-dot" style="background:#28C840;"></div>
-        <div class="m-url"><span class="m-url-text">reportly.today-price.com</span></div>
+        <div class="m-url"><span class="m-url-t">reportly.today-price.com</span></div>
       </div>
       <div class="m-body">
         <div class="m-kpis">
@@ -1409,216 +735,132 @@ footer p strong { color: var(--t-onDark); font-weight: 600; }
         <div class="m-chart">
           <div class="m-chart-l">Monthly Reports Generated</div>
           <div class="m-bars">
-            <div class="m-b" style="height:38%"></div>
-            <div class="m-b" style="height:54%"></div>
-            <div class="m-b" style="height:46%"></div>
-            <div class="m-b a" style="height:72%"></div>
-            <div class="m-b" style="height:62%"></div>
-            <div class="m-b a" style="height:86%"></div>
-            <div class="m-b" style="height:74%"></div>
-            <div class="m-b a" style="height:95%"></div>
+            <div class="m-b" style="height:38%"></div><div class="m-b" style="height:54%"></div>
+            <div class="m-b" style="height:44%"></div><div class="m-b a" style="height:72%"></div>
+            <div class="m-b" style="height:60%"></div><div class="m-b a" style="height:86%"></div>
+            <div class="m-b" style="height:74%"></div><div class="m-b a" style="height:95%"></div>
           </div>
         </div>
-        <div class="m-table">
-          <div class="m-th">
-            <span class="m-th-c">Tool</span><span class="m-th-c">Free</span><span class="m-th-c">PDF</span><span class="m-th-c">India</span><span class="m-th-c">AI</span>
-          </div>
-          <div class="m-tr hi">
-            <span class="m-td b">✦ Reportly</span><span class="m-td m-ck">✓</span><span class="m-td m-ck">✓</span><span class="m-td m-ck">✓</span><span class="m-td m-ck">✓</span>
-          </div>
-          <div class="m-tr">
-            <span class="m-td">Tableau</span><span class="m-td m-cx">✗</span><span class="m-td">~</span><span class="m-td m-cx">✗</span><span class="m-td m-cx">✗</span>
-          </div>
-          <div class="m-tr">
-            <span class="m-td">Canva</span><span class="m-td">~</span><span class="m-td m-ck">✓</span><span class="m-td m-cx">✗</span><span class="m-td m-cx">✗</span>
-          </div>
-          <div class="m-tr">
-            <span class="m-td">Looker</span><span class="m-td m-ck">✓</span><span class="m-td m-cx">✗</span><span class="m-td m-cx">✗</span><span class="m-td m-cx">✗</span>
-          </div>
+        <div class="m-tbl">
+          <div class="m-th"><span class="m-th-c">Tool</span><span class="m-th-c">Free</span><span class="m-th-c">PDF</span><span class="m-th-c">India</span><span class="m-th-c">AI</span></div>
+          <div class="m-tr hi"><span class="m-td b">✦ Reportly</span><span class="m-td m-ck">✓</span><span class="m-td m-ck">✓</span><span class="m-td m-ck">✓</span><span class="m-td m-ck">✓</span></div>
+          <div class="m-tr"><span class="m-td">Tableau</span><span class="m-td m-cx">✗</span><span class="m-td">~</span><span class="m-td m-cx">✗</span><span class="m-td m-cx">✗</span></div>
+          <div class="m-tr"><span class="m-td">Canva</span><span class="m-td">~</span><span class="m-td m-ck">✓</span><span class="m-td m-cx">✗</span><span class="m-td m-cx">✗</span></div>
+          <div class="m-tr"><span class="m-td">Looker</span><span class="m-td m-ck">✓</span><span class="m-td m-cx">✗</span><span class="m-td m-cx">✗</span><span class="m-td m-cx">✗</span></div>
         </div>
       </div>
     </div>
   </div>
 </div></section>
 
-<!-- ═══ IMPACT ═════════════════════════════════════════════════════ -->
-<section id="impact"><div class="sw">
-  <div class="s-label">Impact</div>
+<!-- ═══ IMPACT ══════════════════════════════════════════════ -->
+<section id="impact" class="section dark"><div class="section-inner wrap">
+  <div class="s-lbl">Impact</div>
   <h2 class="s-head">Numbers that <em>matter</em></h2>
   <div class="impact-grid">
-    <div class="impact-card rev">
-      <div class="impact-num"><span id="expImpact">8</span><sup>+</sup></div>
-      <div class="impact-label">Years Experience</div>
-      <div class="impact-desc">End-to-end product design across cybersecurity, IoT energy management, healthcare, and consumer SaaS.</div>
-    </div>
-    <div class="impact-card rev d1">
-      <div class="impact-num">40<small>%</small></div>
-      <div class="impact-label">Compliance Time Saved</div>
-      <div class="impact-desc">Classification dashboard reduced manual compliance configuration time at leading Indian banks on SISA Radar.</div>
-    </div>
-    <div class="impact-card rev d2">
-      <div class="impact-num">350<sup>+</sup></div>
-      <div class="impact-label">PII Types Supported</div>
-      <div class="impact-desc">Real-time adaptive policies across GDPR, CCPA, PCI DSS, and HIPAA frameworks in SISA Radar's engine.</div>
-    </div>
-    <div class="impact-card rev d3">
-      <div class="impact-num">20<sup>+</sup></div>
-      <div class="impact-label">Products Shipped</div>
-      <div class="impact-desc">Enterprise platforms to consumer apps — over 20 digital products designed and built to production.</div>
-    </div>
+    <div class="impact-card rev"><div class="imp-n"><span id="expImpact">8</span><sup>+</sup></div><div class="imp-lbl">Years Experience</div><div class="imp-desc">End-to-end product design across cybersecurity, IoT energy, healthcare, and consumer SaaS.</div></div>
+    <div class="impact-card rev d1"><div class="imp-n">40<small>%</small></div><div class="imp-lbl">Compliance Time Saved</div><div class="imp-desc">Classification dashboard reduced manual compliance config time at leading Indian banks.</div></div>
+    <div class="impact-card rev d2"><div class="imp-n">350<sup>+</sup></div><div class="imp-lbl">PII Types Supported</div><div class="imp-desc">Real-time adaptive policies across GDPR, CCPA, PCI DSS, and HIPAA in SISA Radar.</div></div>
+    <div class="impact-card rev d3"><div class="imp-n">11<sup>+</sup></div><div class="imp-lbl">Products Shipped</div><div class="imp-desc">Enterprise platforms to live consumer SaaS — all designed and built independently.</div></div>
   </div>
 </div></section>
 
-<!-- ═══ EXPERIENCE ══════════════════════════════════════════════════ -->
-<section id="experience"><div class="sw">
-  <div class="s-label">Experience</div>
+<!-- ═══ EXPERIENCE ══════════════════════════════════════════ -->
+<section id="experience" class="section"><div class="section-inner wrap">
+  <div class="s-lbl">Experience</div>
   <h2 class="s-head">Where I've <em>Shaped</em> Products</h2>
   <div class="exp-rows">
-
     <div class="exp-row rev">
-      <div class="exp-left">
+      <div>
         <div class="exp-period">Sep 2021 — Present · <span id="exp1"></span></div>
         <div class="exp-co">SISA</div>
-        <div class="exp-domain">Cybersecurity</div>
+        <div class="exp-dom">Cybersecurity</div>
       </div>
-      <div class="exp-right">
+      <div>
         <div class="exp-role">Lead Product Designer</div>
-        <ul class="exp-bullets">
-          <li>Sole designer on Radar team — <strong>full product ownership</strong> from first discovery call to production. Every pixel, every flow.</li>
+        <ul class="exp-buls">
+          <li>Sole designer on Radar team — <strong>full product ownership</strong> from first discovery call to production.</li>
           <li>Led end-to-end design for <strong>3 core modules</strong> — Data Discovery, Classification, Protection — used by top Indian banks.</li>
           <li>Designed interactive classification dashboard supporting <strong>350+ PII types</strong>, reducing compliance config time by <strong>40%</strong>.</li>
-          <li>Built and maintained scalable design system (Ant Design + Less Modules) across <strong>15+ screens</strong> with enterprise white-labelling.</li>
+          <li>Built and maintained design system (Ant Design + Less Modules) across <strong>15+ screens</strong> with enterprise white-labelling.</li>
           <li>Currently leading <strong>Radar 2.0 redesign</strong> — modernising full UI architecture with Angular & Ant Design.</li>
         </ul>
-        <div class="exp-chips">
-          <span class="exp-chip">Figma</span><span class="exp-chip">Angular</span><span class="exp-chip">Ant Design</span><span class="exp-chip">GDPR · CCPA · PCI DSS · HIPAA</span><span class="exp-chip">Design Systems</span><span class="exp-chip">Enterprise UX</span>
-        </div>
+        <div class="exp-chips"><span class="exp-chip">Figma</span><span class="exp-chip">Angular</span><span class="exp-chip">Ant Design</span><span class="exp-chip">GDPR · CCPA · PCI DSS · HIPAA</span><span class="exp-chip">Design Systems</span></div>
       </div>
     </div>
-
     <div class="exp-row rev">
-      <div class="exp-left">
+      <div>
         <div class="exp-period">Aug 2019 — Aug 2021 · 2 yrs</div>
         <div class="exp-co">Elmeasure</div>
-        <div class="exp-domain">IoT · Energy</div>
+        <div class="exp-dom">IoT · Energy</div>
       </div>
-      <div class="exp-right">
+      <div>
         <div class="exp-role">Senior Product Designer</div>
-        <ul class="exp-bullets">
+        <ul class="exp-buls">
           <li>Sole designer for IoT Energy Management System (EMS + EBS) — <strong>independently owned all UX/UI</strong> from concept to production.</li>
           <li>Designed real-time dashboards for <strong>live IoT data streams</strong> in industrial and commercial properties.</li>
-          <li>Prototyped in Figma & Adobe XD; usability tested across <strong>factory floor and management office</strong> user segments.</li>
           <li>Shipped production code in <strong>HTML, CSS, JavaScript, Angular, and Bootstrap</strong> alongside design work.</li>
         </ul>
-        <div class="exp-chips">
-          <span class="exp-chip">Figma · Adobe XD</span><span class="exp-chip">Angular</span><span class="exp-chip">Bootstrap</span><span class="exp-chip">IoT Dashboard</span><span class="exp-chip">Usability Testing</span>
-        </div>
+        <div class="exp-chips"><span class="exp-chip">Figma · Adobe XD</span><span class="exp-chip">Angular</span><span class="exp-chip">Bootstrap</span><span class="exp-chip">IoT Dashboard</span></div>
       </div>
     </div>
-
     <div class="exp-row rev">
-      <div class="exp-left">
+      <div>
         <div class="exp-period">Jun 2017 — Aug 2019 · 2 yrs 2 mo</div>
         <div class="exp-co">Your Practice Online</div>
-        <div class="exp-domain">Healthcare</div>
+        <div class="exp-dom">Healthcare</div>
       </div>
-      <div class="exp-right">
+      <div>
         <div class="exp-role">UI/UX Designer</div>
-        <ul class="exp-bullets">
+        <ul class="exp-buls">
           <li>Designed and developed <strong>20+ custom healthcare websites</strong> — end-to-end from wireframe to production.</li>
-          <li>Created patient-facing UX improving <strong>appointment booking and resource discovery</strong> for specialist practices.</li>
-          <li>Implemented <strong>SEO strategies</strong> increasing organic traffic visibility for client websites.</li>
+          <li>Created patient-facing UX improving <strong>appointment booking and resource discovery</strong>.</li>
+          <li>Implemented <strong>SEO strategies</strong> increasing organic traffic for client websites.</li>
         </ul>
-        <div class="exp-chips">
-          <span class="exp-chip">WordPress</span><span class="exp-chip">HTML · CSS · JS</span><span class="exp-chip">Photoshop</span><span class="exp-chip">Adobe XD</span><span class="exp-chip">Healthcare UX</span><span class="exp-chip">SEO</span>
-        </div>
+        <div class="exp-chips"><span class="exp-chip">WordPress</span><span class="exp-chip">HTML · CSS · JS</span><span class="exp-chip">Photoshop</span><span class="exp-chip">Healthcare UX</span><span class="exp-chip">SEO</span></div>
       </div>
     </div>
-
   </div>
 </div></section>
 
-<!-- ═══ PROCESS ════════════════════════════════════════════════════ -->
-<section id="process"><div class="sw">
-  <div class="s-label">How I Work</div>
-  <h2 class="s-head" style="margin-bottom:36px;">My Design <em>Process</em></h2>
-  <div class="process-grid">
-    <div class="process-step rev">
-      <div class="proc-n">01</div>
-      <div class="proc-title">Understand</div>
-      <p class="proc-body">User interviews, workflow analysis, competitive audit. I don't open Figma until I understand the actual pain — not the assumed one.</p>
-    </div>
-    <div class="process-step rev d1">
-      <div class="proc-n">02</div>
-      <div class="proc-title">Frame</div>
-      <p class="proc-body">Define success precisely. What metric moves? What's the simplest thing that could work? I design for outcomes, not feature lists.</p>
-    </div>
-    <div class="process-step rev d2">
-      <div class="proc-n">03</div>
-      <div class="proc-title">Design</div>
-      <p class="proc-body">Wireframes → high-fidelity → prototype. I design systems, not screens — tokens, components, states, edge cases, error flows.</p>
-    </div>
-    <div class="process-step rev d3">
-      <div class="proc-n">04</div>
-      <div class="proc-title">Ship</div>
-      <p class="proc-body">I implement what I design — Angular, React, HTML/CSS in production. After launch: measure, learn, and iterate from real data.</p>
-    </div>
+<!-- ═══ PROCESS ════════════════════════════════════════════ -->
+<section id="process" class="section alt"><div class="section-inner wrap">
+  <div class="s-lbl">How I Work</div>
+  <h2 class="s-head" style="margin-bottom:32px;">My Design <em>Process</em></h2>
+  <div class="proc-grid">
+    <div class="proc-step rev"><div class="proc-n">01</div><div class="proc-title">Understand</div><p class="proc-body">User interviews, workflow analysis, competitive audit. I don't open Figma until I understand the actual pain — not the assumed one.</p></div>
+    <div class="proc-step rev d1"><div class="proc-n">02</div><div class="proc-title">Frame</div><p class="proc-body">Define success precisely. What metric moves? What's the simplest solution? I design for outcomes, not feature lists.</p></div>
+    <div class="proc-step rev d2"><div class="proc-n">03</div><div class="proc-title">Design</div><p class="proc-body">Wireframes → high-fidelity → prototype. I design systems, not screens — tokens, components, states, edge cases.</p></div>
+    <div class="proc-step rev d3"><div class="proc-n">04</div><div class="proc-title">Ship</div><p class="proc-body">I implement what I design — Angular, React, HTML/CSS in production. Then measure, learn, and iterate.</p></div>
   </div>
 </div></section>
 
-<!-- ═══ PHILOSOPHY ══════════════════════════════════════════════════ -->
-<section id="phil"><div class="sw">
+<!-- ═══ PHILOSOPHY ══════════════════════════════════════════ -->
+<section id="phil" class="section"><div class="section-inner wrap">
   <div class="phil-grid">
     <div class="rev">
-      <div class="s-label">Philosophy</div>
+      <div class="s-lbl">Philosophy</div>
       <div class="phil-big">Design is a <em>verb</em>,<br>not a title.</div>
       <p class="phil-sub">Four principles guiding every product decision — from Fortune 500 platforms to weekend side projects.</p>
     </div>
     <div class="phil-list rev d1">
-      <div class="phil-item">
-        <span class="phil-n">01</span>
-        <div>
-          <h4>Friction is the enemy</h4>
-          <p>Every extra click, every required signup, every confusing label reduces success. "No signup to start" was the highest-leverage decision in Reportly — I obsess over time-to-value.</p>
-        </div>
-      </div>
-      <div class="phil-item">
-        <span class="phil-n">02</span>
-        <div>
-          <h4>Mental models beat feature lists</h4>
-          <p>Users don't want a "classification dashboard" — they want to feel in control of compliance risk. The right framing changes what you build and how users succeed.</p>
-        </div>
-      </div>
-      <div class="phil-item">
-        <span class="phil-n">03</span>
-        <div>
-          <h4>Design the edge case first</h4>
-          <p>Empty states, errors, zero-data views — design these well and the happy path takes care of itself. Learned this building compliance workflows for security analysts.</p>
-        </div>
-      </div>
-      <div class="phil-item">
-        <span class="phil-n">04</span>
-        <div>
-          <h4>If I design it, I build it</h4>
-          <p>Most designers hand off. I don't. Angular, React, HTML/CSS in production. Faster iteration, more realistic designs, zero "can't build that" conversations.</p>
-        </div>
-      </div>
+      <div class="phil-item"><span class="phil-n">01</span><div><h4>Friction is the enemy</h4><p>Every extra click, every required signup reduces success. "No signup to start" was the highest-leverage UX decision in Reportly.</p></div></div>
+      <div class="phil-item"><span class="phil-n">02</span><div><h4>Mental models beat feature lists</h4><p>Users don't want a "classification dashboard" — they want to feel in control of compliance risk. The right framing changes everything.</p></div></div>
+      <div class="phil-item"><span class="phil-n">03</span><div><h4>Design the edge case first</h4><p>Empty states, errors, zero-data views — design these well and the happy path takes care of itself.</p></div></div>
+      <div class="phil-item"><span class="phil-n">04</span><div><h4>If I design it, I build it</h4><p>Most designers hand off. I don't. Angular, React, HTML/CSS in production. Faster iteration, zero "can't build that" conversations.</p></div></div>
     </div>
   </div>
 </div></section>
 
-<!-- ═══ CONTACT ════════════════════════════════════════════════════ -->
-<section id="contact"><div class="sw">
-  <div class="rev">
-    <div class="avail-badge">
-      <div class="avail-dot"></div>
-      Open to opportunities · Bengaluru / Remote
-    </div>
+<!-- ═══ CONTACT ════════════════════════════════════════════ -->
+<section id="contact" class="section alt"><div class="section-inner wrap">
+  <div class="rev" style="text-align:center;">
+    <div class="avail-badge"><div class="avail-dot"></div>Open to opportunities · Bengaluru / Remote</div>
     <h2 class="c-head">Let's make<br>something <em>great.</em></h2>
-    <p class="c-sub">I'm exploring senior Product Designer roles at companies that care deeply about craft, shipping fast, and building products that genuinely improve people's work.</p>
+    <p class="c-sub">I'm exploring senior Product Designer roles at companies that care deeply about craft, shipping fast, and building products that genuinely improve people's lives.</p>
     <div class="c-btns">
       <a href="mailto:pujarihonnappa888@gmail.com" class="btn btn-dark">
-        <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 3.5h11M2 3.5v8h11v-8M2 3.5l5.5 5 5.5-5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 3h12M1 3v8h12V3M1 3l6 5 6-5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         pujarihonnappa888@gmail.com
       </a>
       <a href="https://reportly.today-price.com" target="_blank" class="btn btn-outline">View Reportly ↗</a>
@@ -1626,19 +868,18 @@ footer p strong { color: var(--t-onDark); font-weight: 600; }
     </div>
     <div class="c-meta">
       <a href="tel:+918971318955">+91 89713 18955</a>
-      <div class="c-sep"></div>
-      <span>Bengaluru, India</span>
-      <div class="c-sep"></div>
-      <span>B.E. · VTU · 2016</span>
+      <div class="c-sep"></div><span>Bengaluru, India</span>
+      <div class="c-sep"></div><span>B.E. · VTU · 2016</span>
     </div>
   </div>
 </div></section>
 
-<!-- ═══ FOOTER ═════════════════════════════════════════════════════ -->
+<!-- ═══ FOOTER ══════════════════════════════════════════════ -->
 <footer>
-  <p><strong>Honnappa Pujari</strong> · Lead Product Designer · Bengaluru</p>
+  <p><strong>Honnappa Pujari</strong> · Lead Product Designer · Bengaluru, India</p>
   <div class="f-links">
     <a href="https://reportly.today-price.com" target="_blank">Reportly ↗</a>
+    <a href="https://today-price.com" target="_blank">Today Price ↗</a>
     <a href="#work">Work</a>
     <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
@@ -1646,82 +887,51 @@ footer p strong { color: var(--t-onDark); font-weight: 600; }
 </footer>
 
 <script>
-/* ── Custom cursor ─────────────────────────────────────── */
-const dot  = document.getElementById('cdot');
-const ring = document.getElementById('cring');
+/* ── Cursor ───────────────────────────────────────────── */
+const dot=document.getElementById('cdot'),ring=document.getElementById('cring');
 let mx=0,my=0,rx=0,ry=0;
-
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  dot.style.left = mx+'px'; dot.style.top = my+'px';
-});
-(function anim(){
-  rx += (mx-rx)*.11; ry += (my-ry)*.11;
-  ring.style.left=rx+'px'; ring.style.top=ry+'px';
-  requestAnimationFrame(anim);
-})();
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
 document.querySelectorAll('a,button,.proj,.impact-card').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{ dot.style.width='4px'; dot.style.height='4px'; ring.style.width='48px'; ring.style.height='48px'; ring.style.borderColor='var(--coral)'; });
-  el.addEventListener('mouseleave',()=>{ dot.style.width='8px'; dot.style.height='8px'; ring.style.width='32px'; ring.style.height='32px'; ring.style.borderColor='rgba(17,18,16,0.3)'; });
+  el.addEventListener('mouseenter',()=>{dot.style.width='4px';dot.style.height='4px';ring.style.width='46px';ring.style.height='46px';ring.style.borderColor='var(--coral)';});
+  el.addEventListener('mouseleave',()=>{dot.style.width='8px';dot.style.height='8px';ring.style.width='32px';ring.style.height='32px';ring.style.borderColor='rgba(17,18,16,.28)';});
 });
 
-/* ── Scroll progress bar ───────────────────────────────── */
-const prog = document.getElementById('prog');
-window.addEventListener('scroll', () => {
-  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-  prog.style.width = pct + '%';
-}, { passive: true });
+/* ── Progress ─────────────────────────────────────────── */
+const prog=document.getElementById('prog');
+window.addEventListener('scroll',()=>{prog.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';},{passive:true});
 
-/* ── Scroll reveal ─────────────────────────────────────── */
-const revEls = document.querySelectorAll('.rev');
-const ro = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
-}, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
-revEls.forEach(el => ro.observe(el));
+/* ── Reveal ───────────────────────────────────────────── */
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.07,rootMargin:'0px 0px -32px 0px'});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
 
-/* ── Active nav highlight ──────────────────────────────── */
-const navAs = document.querySelectorAll('.nav-links a');
-const sections = document.querySelectorAll('section[id]');
-window.addEventListener('scroll', () => {
-  let cur = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
-  navAs.forEach(a => {
-    a.style.color = (a.getAttribute('href') === '#'+cur) ? 'var(--t-primary)' : '';
-    a.style.fontWeight = (a.getAttribute('href') === '#'+cur) ? '700' : '';
-  });
-}, { passive: true });
+/* ── Active nav ───────────────────────────────────────── */
+const navAs=document.querySelectorAll('.nav-links a');
+const secs=document.querySelectorAll('section[id]');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id;});
+  navAs.forEach(a=>{const active=a.getAttribute('href')==='#'+cur;a.style.color=active?'var(--t1)':'';a.style.fontWeight=active?'700':'';});
+},{passive:true});
 
-/* ── Live experience calculator ────────────────────────── */
-function calcExp() {
-  const start = new Date(2017, 5, 1); // June 2017
-  const now   = new Date();
-  let yrs = now.getFullYear() - start.getFullYear();
-  let mos = now.getMonth()    - start.getMonth();
-  if (mos < 0) { yrs--; mos += 12; }
-
-  const yStr   = yrs + ' year' + (yrs !== 1 ? 's' : '');
-  const mStr   = mos > 0 ? ' ' + mos + ' month' + (mos !== 1 ? 's' : '') : '';
-  const navStr = yrs + ' yrs' + (mos > 0 ? ' ' + mos + ' mo' : '');
-
-  ['expHero','expAbout'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = yStr + mStr;
-  });
-  const navEl = document.getElementById('expNav');
-  if (navEl) navEl.textContent = navStr;
-
-  ['expYears','expImpact'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = yrs;
-  });
-
-  // SISA duration
-  const sisaStart = new Date(2021, 8, 1); // Sep 2021
-  let sy = now.getFullYear() - sisaStart.getFullYear();
-  let sm = now.getMonth()    - sisaStart.getMonth();
-  if (sm < 0) { sy--; sm += 12; }
-  const el1 = document.getElementById('exp1');
-  if (el1) el1.textContent = sy + ' yr' + (sy!==1?'s':'') + (sm>0?' '+sm+' mo':'');
+/* ── Experience calculator ────────────────────────────── */
+function calcExp(){
+  const start=new Date(2017,5,1); // Jun 2017
+  const now=new Date();
+  let y=now.getFullYear()-start.getFullYear();
+  let m=now.getMonth()-start.getMonth();
+  if(m<0){y--;m+=12;}
+  const full=y+' year'+(y!==1?'s':'')+(m>0?' '+m+' month'+(m!==1?'s':''):'');
+  const nav=y+' yrs'+(m>0?' '+m+' mo':'');
+  ['expHero','expAbout'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=full;});
+  const ne=document.getElementById('expNav');if(ne)ne.textContent=nav;
+  ['expYears','expImpact'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=y;});
+  // SISA
+  const ss=new Date(2021,8,1);
+  let sy=now.getFullYear()-ss.getFullYear(),sm=now.getMonth()-ss.getMonth();
+  if(sm<0){sy--;sm+=12;}
+  const e1=document.getElementById('exp1');
+  if(e1)e1.textContent=sy+' yr'+(sy!==1?'s':'')+(sm>0?' '+sm+' mo':'');
 }
 calcExp();
 </script>
